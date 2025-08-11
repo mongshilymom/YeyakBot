@@ -17,6 +17,7 @@ body {
     background-color: #ffffff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding-bottom: 70px; /* Mobile sticky CTA space */
 }
 
 /* Container */
@@ -790,6 +791,58 @@ main {
     margin-top: 40px;
     padding-top: 30px;
     border-top: 1px solid #e5e5e5;
+}
+
+/* Sticky Mobile CTA */
+.sticky-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0f172a;
+    color: #fff;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    padding: 10px;
+    z-index: 50;
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.sticky-cta a {
+    flex: 1;
+    max-width: 360px;
+    text-align: center;
+    padding: 12px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: all 0.2s ease;
+}
+
+.sticky-cta .ghost {
+    background: #fff;
+    color: #0f172a;
+}
+
+.sticky-cta .call {
+    background: #22c55e;
+    color: #fff;
+}
+
+.sticky-cta a:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 880px) {
+    .sticky-cta {
+        display: none;
+    }
+    
+    body {
+        padding-bottom: 0;
+    }
 }
 
 /* 404 Error Page */

@@ -10,7 +10,7 @@ Preferred communication style: Simple, everyday language.
 
 ## Frontend Architecture
 - **Pure Static Approach**: Built entirely with vanilla HTML5, CSS3, and JavaScript without any frameworks (React, Vue, Bootstrap explicitly avoided)
-- **Mobile-First Design**: Responsive design prioritizing mobile experience with breakpoints and flexible layouts
+- **Mobile-First Design**: Responsive design prioritizing mobile experience with breakpoints, flexible layouts, and sticky mobile CTA bar
 - **Performance Optimization**: Focused on Core Web Vitals with target LCP < 2.0s and CLS approaching 0
 - **Component Structure**: Modular CSS with optimized system font stack (no external fonts), 1100px max container width, and 3-column responsive grid cards
 
@@ -20,7 +20,7 @@ Preferred communication style: Simple, everyday language.
 - **Demo Page** (`demo.html`): Enhanced Calendly widget integration with loading states and fallback contact options
 - **Legal Pages** (`privacy.html`, `terms.html`): Comprehensive privacy policy and terms of service with guarantee clauses
 - **Error Handling**: Custom 404 page with auto-redirect to home
-- **Navigation**: Enhanced header with KakaoTalk channel and phone contact options
+- **Navigation**: Enhanced header with KakaoTalk channel and phone contact options, plus sticky mobile CTA bar for conversions
 
 ## SEO and Meta Architecture
 - **Structured Data**: JSON-LD Organization and Product schemas for comprehensive business information
