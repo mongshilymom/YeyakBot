@@ -35,11 +35,11 @@ Preferred communication style: Simple, everyday language.
 - **Form Integration**: Dynamic URL injection for embedded forms with UTM preservation
 
 ## Asset Management
-- **Vector Graphics**: SVG logo optimized to ~2KB with stroke-based design
-- **Favicons**: Placeholder SVG favicon (needs ICO conversion for production)
-- **Social Images**: SVG OG image at 1200x630px (needs JPG conversion for production)
+- **Logo Graphics**: Professional PNG logo with Korean typography
+- **Favicons**: High-quality PNG favicon for all browsers
+- **Social Images**: PNG OG image optimized for social media sharing
 - **CSS Architecture**: Single stylesheet with modular sections for maintainability
-- **Total Size**: Core files under 64KB (excluding images)
+- **Total Size**: Core files under 68KB (excluding images)
 
 ## Accessibility Features
 - **ARIA Labels**: Proper labeling for all interactive elements

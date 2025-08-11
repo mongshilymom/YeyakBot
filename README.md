@@ -76,9 +76,9 @@
 - 네이버 애널리틱스 추가 설정
 
 ### 7. 성능 최적화 (배포 전)
-- favicon.ico를 실제 ICO 파일로 교체
-- og.svg를 JPG/PNG로 변환 (1200x630px, ~40KB)
+- [x] PNG 형식 favicon, logo, OG 이미지로 교체 완료
 - Lighthouse 점수 확인 (Performance/SEO 90점 이상 목표)
+- 이미지 압축 확인 (총 이미지 용량 100KB 이하 권장)
 
 ## 배포 방법
 
