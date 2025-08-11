@@ -162,8 +162,8 @@
                 rootMargin: '50px 0px'
             });
 
-            // Observe benefit cards and feature items
-            const animatableElements = document.querySelectorAll('.benefit-card, .feature-item, .pricing-card');
+            // Observe benefit cards, result cards, and feature items
+            const animatableElements = document.querySelectorAll('.benefit-card, .result-card, .feature-item, .pricing-card');
             animatableElements.forEach(el => observer.observe(el));
         }
     };
