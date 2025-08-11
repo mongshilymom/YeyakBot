@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20분 데모 예약 - 예약봇 YEYAKBOT</title>
+    <meta name="description" content="20분 데모를 통해 예약봇의 모든 기능을 직접 확인하고 궁금한 점을 해결하세요.">
+    <link rel="canonical" href="https://yeyakbot.com/demo.html">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="20분 데모 예약 - 예약봇 YEYAKBOT">
+    <meta property="og:description" content="20분 데모를 통해 예약봇의 모든 기능을 직접 확인하고 궁금한 점을 해결하세요.">
+    <meta property="og:image" content="https://yeyakbot.com/assets/og.jpg">
+    <meta property="og:url" content="https://yeyakbot.com/demo.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/logo.svg" alt="예약봇 로고" width="32" height="32">
+                    <a href="index.html" class="logo-text">예약봇 YEYAKBOT</a>
+                </div>
+                <nav class="header-nav">
+                    <a href="booking.html" class="btn btn-secondary" aria-label="3분만에 예약 설정하기">3분 예약</a>
+                    <a href="demo.html" class="btn btn-primary" aria-label="20분 데모 예약하기">20분 데모</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="demo-section">
+            <div class="container">
+                <div class="demo-content">
+                    <h1>20분 데모 예약</h1>
+                    <p class="demo-description">
+                        예약봇 전문가와 1:1로 만나 실제 동작 화면을 보며 모든 기능을 확인하세요.<br>
+                        궁금한 점은 무엇이든 물어보시고, 우리 비즈니스에 맞는 최적의 설정 방법을 알아보세요.
+                    </p>
+                    
+                    <div class="calendly-container">
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget" data-url="REPLACE_CALENDLY_URL" style="min-width:320px;height:740px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 예약봇 · YEYAKBOT</p>
+                <div class="footer-links">
+                    <a href="robots.txt">robots.txt</a>
+                    <a href="sitemap.xml">sitemap.xml</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
