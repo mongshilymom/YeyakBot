@@ -377,17 +377,9 @@
     });
 
     // Analytics tracking for CTA buttons
-    function track(sel, name) {
-        document.querySelectorAll(sel).forEach(a => {
-            a.addEventListener('click', () => window.gtag && gtag('event', name));
-        });
-    }
-
-    // Track key conversion actions
-    track('a[href*="booking.html"]', 'cta_booking');
-    track('a[href*="demo.html"]', 'cta_demo');
-    track('a[href^="https://pf.kakao.com"]', 'cta_kakao');
-    track('a[href^="tel:"]', 'cta_call');
+    function t(sel,name){document.querySelectorAll(sel).forEach(a=>a.addEventListener('click',()=>window.gtag&&gtag('event',name))); }
+    t('a[href*="booking.html"]','cta_booking'); t('a[href*="demo.html"]','cta_demo');
+    t('a[href^="https://pf.kakao.com"]','cta_kakao'); t('a[href^="tel:"]','cta_call');
 
     // FAQ Manager for accessibility and interactions
     const FAQManager = {

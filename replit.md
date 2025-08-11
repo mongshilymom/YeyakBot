@@ -41,7 +41,7 @@ Preferred communication style: Simple, everyday language.
 - **Social Images**: PNG OG image optimized for social media sharing
 - **Icons**: SVG icons for optimal performance and scalability
 - **CSS Architecture**: Single stylesheet with modular sections for maintainability
-- **Total Size**: Core files under 68KB (excluding images)
+- **Total Size**: Core files under 64KB (excluding images)
 
 ## Accessibility Features
 - **ARIA Labels**: Proper labeling for all interactive elements
