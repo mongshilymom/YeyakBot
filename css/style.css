@@ -623,6 +623,33 @@ main {
     min-width: 120px;
 }
 
+.calendly-loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.calendly-error {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.calendly-error h3 {
+    color: #dc2626;
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+}
+
+.calendly-error p {
+    color: #6b7280;
+    margin-bottom: 24px;
+}
+
 /* 404 Error Page */
 .error-container {
     min-height: 100vh;

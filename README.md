@@ -52,9 +52,12 @@
 - `booking.html`의 `REPLACE_GOOGLE_FORM_URL`을 실제 임베드 URL로 교체
 - 임베드 설정: 폭 100%, 높이 900px
 
-### 2. 캘린더 링크 교체  
+### 2. Calendly 설정 및 링크 교체  
+- `calendly-setup.md` 가이드를 따라 Calendly 이벤트 생성
+- 이벤트명: "예약봇 20분 데모", 위치: Google Meet
+- 질문: 업체명, 업종, 월 평균 문의량, 놓치는 시간대
 - `demo.html`의 `REPLACE_CALENDLY_URL`을 실제 Calendly 링크로 교체
-- 예시: `https://calendly.com/yeyakbot/demo`
+- 확인 페이지에 yeyakbot.com 리디렉션 설정
 
 ### 3. 검색엔진 등록 및 애널리틱스 설정
 - **Google Search Console**: `REPLACE_GOOGLE_TOKEN`을 실제 소유 확인 토큰으로 교체

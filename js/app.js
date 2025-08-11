@@ -348,6 +348,34 @@
         if (error) error.style.display = 'block';
     };
 
+    // Calendly loading and error handling for demo page
+    window.hideCalendlyLoading = function() {
+        const loading = document.getElementById('calendly-loading');
+        const widget = document.getElementById('calendly-widget');
+        if (loading && widget) {
+            loading.style.display = 'none';
+            widget.style.display = 'block';
+        }
+    };
+
+    window.showCalendlyError = function() {
+        const loading = document.getElementById('calendly-loading');
+        const widget = document.getElementById('calendly-widget');
+        const error = document.getElementById('calendly-error');
+        if (loading) loading.style.display = 'none';
+        if (widget) widget.style.display = 'none';
+        if (error) error.style.display = 'block';
+    };
+
+    // Listen for Calendly events
+    window.addEventListener('message', function(e) {
+        if (e.data.event && e.data.event.indexOf('calendly') === 0) {
+            if (e.data.event === 'calendly.profile_page_viewed') {
+                hideCalendlyLoading();
+            }
+        }
+    });
+
     // FAQ Manager for accessibility and interactions
     const FAQManager = {
         init() {

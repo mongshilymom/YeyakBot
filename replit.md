@@ -16,8 +16,8 @@ Preferred communication style: Simple, everyday language.
 
 ## Page Structure
 - **Landing Page** (`index.html`): Hero section with dual CTAs, benefit cards, customer results section, pricing display, FAQ section, and service sections
-- **Booking Page** (`booking.html`): Embedded form (Google Forms/Tally) for 3-minute setup process
-- **Demo Page** (`demo.html`): Embedded Calendly widget for 20-minute demo scheduling
+- **Booking Page** (`booking.html`): Enhanced Google Forms integration with loading states and error handling
+- **Demo Page** (`demo.html`): Enhanced Calendly widget integration with loading states and fallback contact options
 - **Error Handling**: Custom 404 page with auto-redirect to home
 - **Navigation**: Enhanced header with KakaoTalk channel and phone contact options
 
@@ -50,13 +50,15 @@ Preferred communication style: Simple, everyday language.
 # External Dependencies
 
 ## Form Services
-- **Google Forms**: Primary option for the 3-minute booking form embedding
-- **Tally Forms**: Alternative form service option for booking functionality
+- **Google Forms**: 8-field booking form with Korean business-specific questions (name, contact, business type, location, inquiry type, budget, call time, notes)
+- **Form Error Handling**: Professional loading states with fallback contact options (KakaoTalk/phone)
 - **UTM Integration**: Forms configured to receive and track UTM parameters
 
 ## Scheduling Service
-- **Calendly**: Embedded scheduling widget for 20-minute demo bookings
-- **Widget Script**: External Calendly JavaScript widget loaded asynchronously
+- **Calendly**: 20-minute demo booking with Google Meet integration
+- **Custom Questions**: Business-specific intake (company, industry, monthly inquiries, missed time periods)
+- **Error Handling**: Loading states with fallback contact options
+- **Confirmation**: Redirect to yeyakbot.com homepage after booking
 
 ## Social Media Integration
 - **Kakao Channel**: Placeholder integration for Korean messaging platform (pf.kakao.com/_yeyakbot)

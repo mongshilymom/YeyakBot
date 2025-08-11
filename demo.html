@@ -59,10 +59,25 @@
                     </p>
                     
                     <div class="calendly-container">
+                        <div class="calendly-loading" id="calendly-loading">
+                            <p>데모 일정을 로딩 중입니다...</p>
+                        </div>
                         <!-- Calendly inline widget begin -->
-                        <div class="calendly-inline-widget" data-url="REPLACE_CALENDLY_URL" style="min-width:320px;height:740px;"></div>
+                        <div class="calendly-inline-widget" 
+                             data-url="REPLACE_CALENDLY_URL" 
+                             style="min-width:320px;height:740px;display:none;"
+                             id="calendly-widget">
+                        </div>
                         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                         <!-- Calendly inline widget end -->
+                        <div class="calendly-error" id="calendly-error" style="display: none;">
+                            <h3>일정 예약을 불러올 수 없습니다</h3>
+                            <p>직접 문의하시려면 아래 방법을 이용하세요:</p>
+                            <div class="contact-options">
+                                <a href="https://pf.kakao.com/_yeyakbot" target="_blank" rel="noopener" class="btn btn-primary">카카오톡 문의</a>
+                                <a href="tel:01000000000" class="btn btn-secondary">전화 문의</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
