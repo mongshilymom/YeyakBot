@@ -623,6 +623,22 @@ main {
     min-width: 120px;
 }
 
+.form-fallback {
+    text-align: center;
+    margin: 12px 0;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.form-fallback a {
+    color: #1e40af;
+    text-decoration: none;
+}
+
+.form-fallback a:hover {
+    text-decoration: underline;
+}
+
 .calendly-loading {
     text-align: center;
     padding: 60px 20px;
