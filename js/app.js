@@ -316,12 +316,14 @@
                         timestamp: new Date().toISOString()
                     });
                     
-                    // If you're using Google Analytics, GTM, or other analytics:
-                    // gtag('event', 'click', {
-                    //     event_category: 'CTA',
-                    //     event_label: buttonText,
-                    //     value: destination
-                    // });
+                    // Google Analytics 4 event tracking (uncomment when GA4 ID is set)
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'click', {
+                            event_category: 'CTA',
+                            event_label: buttonText,
+                            custom_parameter_destination: destination
+                        });
+                    }
                 });
             });
         }

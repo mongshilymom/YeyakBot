@@ -55,10 +55,10 @@
 - `demo.html`의 `REPLACE_CALENDLY_URL`을 실제 Calendly 링크로 교체
 - 예시: `https://calendly.com/yeyakbot/demo`
 
-### 3. 검색엔진 등록
-- **Google Search Console**: 사이트 소유 확인 메타 태그 추가
-- **네이버 Search Advisor**: 사이트 소유 확인 메타 태그 추가
-- 메타 태그를 `<head>` 섹션에 추가
+### 3. 검색엔진 등록 및 애널리틱스 설정
+- **Google Search Console**: `REPLACE_GOOGLE_TOKEN`을 실제 소유 확인 토큰으로 교체
+- **네이버 Search Advisor**: `REPLACE_NAVER_TOKEN`을 실제 소유 확인 토큰으로 교체
+- **Google Analytics 4**: `REPLACE_GA4_ID`를 실제 GA4 측정 ID로 교체 (예: G-XXXXXXXXX)
 
 ### 4. 연락처 정보 교체
 - 카카오채널 URL: `https://pf.kakao.com/_yeyakbot`을 실제 채널 주소로 교체
@@ -70,9 +70,10 @@
 - 24bot.kr → yeyakbot.com (301 리다이렉트)
 - www.yeyakbot.com → yeyakbot.com (301 리다이렉트)
 
-### 6. 애널리틱스 설정 (선택사항)
-- Google Analytics 또는 GTM 태그 추가
-- `js/app.js`의 AnalyticsManager에서 실제 추적 코드 활성화
+### 6. 고급 애널리틱스 설정 (선택사항)
+- Google Tag Manager (GTM) 설정 시 GA4 대신 GTM 컨테이너 ID 사용
+- `js/app.js`의 AnalyticsManager에서 커스텀 이벤트 추적 활성화
+- 네이버 애널리틱스 추가 설정
 
 ### 7. 성능 최적화 (배포 전)
 - favicon.ico를 실제 ICO 파일로 교체
@@ -95,7 +96,9 @@
 - [x] SEO 메타 태그 및 구조화 데이터 완비
 - [x] 접근성 기준 충족 (ARIA, 키보드 네비게이션)
 - [x] 콘솔 에러 0개 (폼/캘린더 URL 교체 후)
-- [x] 파일 총 용량 60KB 이하 (이미지 제외)
+- [x] 파일 총 용량 64KB (이미지 제외)
+- [x] Google Analytics 4 및 검색엔진 인증 태그 준비 완료
 - [ ] 실제 폼 URL 교체 필요
 - [ ] 실제 캘린더 URL 교체 필요
+- [ ] GA4 측정 ID 및 검색엔진 인증 토큰 교체 필요
 
