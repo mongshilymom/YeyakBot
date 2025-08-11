@@ -716,6 +716,13 @@ main {
 }
 
 .legal-article h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.legal-article h3 {
     font-size: 1.25rem;
     font-weight: 600;
     color: #1a1a1a;
