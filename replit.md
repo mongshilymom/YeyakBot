@@ -22,7 +22,7 @@ Preferred communication style: Simple, everyday language.
 - **Navigation**: Enhanced header with KakaoTalk channel and phone contact options
 
 ## SEO and Meta Architecture
-- **Structured Data**: JSON-LD Organization schema for business information
+- **Structured Data**: JSON-LD Organization and Product schemas for comprehensive business information
 - **Open Graph**: Complete OG tag implementation for social media sharing
 - **Canonical URLs**: Proper canonical link structure across all pages
 - **Sitemap**: XML sitemap covering all main pages
