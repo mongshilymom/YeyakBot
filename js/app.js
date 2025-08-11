@@ -162,8 +162,8 @@
                 rootMargin: '50px 0px'
             });
 
-            // Observe benefit cards, result cards, and feature items
-            const animatableElements = document.querySelectorAll('.benefit-card, .result-card, .feature-item, .pricing-card');
+            // Observe benefit cards, result cards, feature items, and FAQ items
+            const animatableElements = document.querySelectorAll('.benefit-card, .result-card, .feature-item, .pricing-card, .faq-item');
             animatableElements.forEach(el => observer.observe(el));
         }
     };
@@ -329,6 +329,36 @@
         }
     };
 
+    // FAQ Manager for accessibility and interactions
+    const FAQManager = {
+        init() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const summary = item.querySelector('summary');
+                if (summary) {
+                    // Add ARIA attributes for accessibility
+                    summary.setAttribute('aria-expanded', 'false');
+                    summary.setAttribute('role', 'button');
+                    
+                    // Handle toggle events
+                    item.addEventListener('toggle', () => {
+                        const isOpen = item.hasAttribute('open');
+                        summary.setAttribute('aria-expanded', isOpen.toString());
+                    });
+                    
+                    // Handle keyboard navigation
+                    summary.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            summary.click();
+                        }
+                    });
+                }
+            });
+        }
+    };
+
     // Initialize everything when DOM is ready
     function initialize() {
         // Save UTM parameters from current URL
@@ -341,6 +371,7 @@
         AccessibilityManager.init();
         ErrorManager.init();
         AnalyticsManager.init();
+        FAQManager.init();
         
         console.log('YEYAKBOT application initialized successfully');
     }

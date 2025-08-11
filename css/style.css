@@ -372,6 +372,98 @@ main {
     line-height: 1.6;
 }
 
+/* FAQ Section */
+.faq {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 48px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item[open] {
+    border-color: #1e40af;
+}
+
+.faq-item summary {
+    padding: 24px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+    content: '−';
+    color: #1e40af;
+}
+
+.faq-item summary:hover {
+    background-color: #f1f5f9;
+}
+
+.faq-answer {
+    padding: 0 24px 24px 24px;
+    color: #475569;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* CTA Section */
 .cta-section {
     padding: 80px 0;
@@ -587,6 +679,7 @@ main {
     .results,
     .features,
     .pricing,
+    .faq,
     .cta-section {
         padding: 60px 0;
     }
@@ -602,6 +695,21 @@ main {
     .result-card,
     .feature-item {
         padding: 24px;
+    }
+    
+    .faq-item summary {
+        padding: 20px;
+        font-size: 1rem;
+    }
+    
+    .faq-item summary::after {
+        right: 20px;
+        font-size: 1.25rem;
+    }
+    
+    .faq-answer {
+        padding: 0 20px 20px 20px;
+        font-size: 0.9rem;
     }
     
     .pricing-card {
@@ -675,7 +783,8 @@ main {
     .btn,
     .benefit-card,
     .result-card,
-    .feature-item {
+    .feature-item,
+    .faq-item {
         transition: all 0.3s ease;
     }
 }

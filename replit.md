@@ -15,7 +15,7 @@ Preferred communication style: Simple, everyday language.
 - **Component Structure**: Modular CSS with system font stack, 1100px max container width, and 3-column responsive grid cards
 
 ## Page Structure
-- **Landing Page** (`index.html`): Hero section with dual CTAs, benefit cards, customer results section, pricing display, and service sections
+- **Landing Page** (`index.html`): Hero section with dual CTAs, benefit cards, customer results section, pricing display, FAQ section, and service sections
 - **Booking Page** (`booking.html`): Embedded form (Google Forms/Tally) for 3-minute setup process
 - **Demo Page** (`demo.html`): Embedded Calendly widget for 20-minute demo scheduling
 - **Error Handling**: Custom 404 page with auto-redirect to home
