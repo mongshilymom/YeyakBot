@@ -69,7 +69,7 @@ Preferred communication style: Simple, everyday language.
 ## Analytics and Tracking
 - **UTM Parameters**: Support for standard UTM tracking (source, medium, campaign, term, content)
 - **localStorage**: Client-side UTM parameter persistence across sessions
-- **Google Analytics 4**: Ready-to-configure GA4 implementation with CTA click tracking
+- **Google Analytics 4**: Ready-to-configure GA4 implementation with comprehensive CTA click tracking (booking, demo, KakaoTalk, phone calls)
 - **Site Verification**: Placeholder meta tags for Google Search Console and Naver verification
 
 ## CDN and Hosting
