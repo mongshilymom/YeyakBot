@@ -12,7 +12,7 @@ Preferred communication style: Simple, everyday language.
 - **Pure Static Approach**: Built entirely with vanilla HTML5, CSS3, and JavaScript without any frameworks (React, Vue, Bootstrap explicitly avoided)
 - **Mobile-First Design**: Responsive design prioritizing mobile experience with breakpoints and flexible layouts
 - **Performance Optimization**: Focused on Core Web Vitals with target LCP < 2.0s and CLS approaching 0
-- **Component Structure**: Modular CSS with system font stack, 1100px max container width, and 3-column responsive grid cards
+- **Component Structure**: Modular CSS with optimized system font stack (no external fonts), 1100px max container width, and 3-column responsive grid cards
 
 ## Page Structure
 - **Landing Page** (`index.html`): Hero section with dual CTAs, benefit cards, customer results section, pricing display, FAQ section, and service sections
@@ -39,6 +39,7 @@ Preferred communication style: Simple, everyday language.
 - **Logo Graphics**: Professional PNG logo with Korean typography
 - **Favicons**: High-quality PNG favicon for all browsers
 - **Social Images**: PNG OG image optimized for social media sharing
+- **Icons**: SVG icons for optimal performance and scalability
 - **CSS Architecture**: Single stylesheet with modular sections for maintainability
 - **Total Size**: Core files under 68KB (excluding images)
 
