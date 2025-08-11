@@ -19,6 +19,7 @@ Preferred communication style: Simple, everyday language.
 - **Booking Page** (`booking.html`): Embedded form (Google Forms/Tally) for 3-minute setup process
 - **Demo Page** (`demo.html`): Embedded Calendly widget for 20-minute demo scheduling
 - **Error Handling**: Custom 404 page with auto-redirect to home
+- **Navigation**: Enhanced header with KakaoTalk channel and phone contact options
 
 ## SEO and Meta Architecture
 - **Structured Data**: JSON-LD Organization schema for business information

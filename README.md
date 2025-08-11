@@ -40,6 +40,7 @@
 ### 기능
 - **UTM 추적**: localStorage를 통한 마케팅 파라미터 유지
 - **헤더 효과**: 스크롤 시 그림자 효과
+- **다중 연락 수단**: 카카오채널, 전화 링크 포함 네비게이션
 - **에러 처리**: 폼 로딩 실패 시 사용자 친화적 메시지
 - **SEO 최적화**: 메타 태그, JSON-LD, 사이트맵 완비
 
@@ -59,17 +60,21 @@
 - **네이버 Search Advisor**: 사이트 소유 확인 메타 태그 추가
 - 메타 태그를 `<head>` 섹션에 추가
 
-### 4. 도메인 리다이렉트 설정 (Cloudflare)
+### 4. 연락처 정보 교체
+- 카카오채널 URL: `https://pf.kakao.com/_yeyakbot`을 실제 채널 주소로 교체
+- 전화번호: `tel:01000000000`을 실제 연락처로 교체
+
+### 5. 도메인 리다이렉트 설정 (Cloudflare)
 - 예약봇.co.kr → yeyakbot.com (301 리다이렉트)
 - 예약봇.kr → yeyakbot.com (301 리다이렉트)  
 - 24bot.kr → yeyakbot.com (301 리다이렉트)
 - www.yeyakbot.com → yeyakbot.com (301 리다이렉트)
 
-### 5. 애널리틱스 설정 (선택사항)
+### 6. 애널리틱스 설정 (선택사항)
 - Google Analytics 또는 GTM 태그 추가
 - `js/app.js`의 AnalyticsManager에서 실제 추적 코드 활성화
 
-### 6. 성능 최적화 (배포 전)
+### 7. 성능 최적화 (배포 전)
 - favicon.ico를 실제 ICO 파일로 교체
 - og.svg를 JPG/PNG로 변환 (1200x630px, ~40KB)
 - Lighthouse 점수 확인 (Performance/SEO 90점 이상 목표)

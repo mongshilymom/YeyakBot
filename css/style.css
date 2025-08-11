@@ -109,6 +109,22 @@ body {
     transform: translateY(-1px);
 }
 
+.btn-ghost {
+    background-color: transparent;
+    color: #666;
+    border-color: transparent;
+    font-size: 0.8rem;
+    padding: 10px 16px;
+    min-width: 70px;
+}
+
+.btn-ghost:hover {
+    background-color: #f8f9fa;
+    color: #333;
+    border-color: #e9ecef;
+    transform: translateY(-1px);
+}
+
 .btn-large {
     padding: 16px 32px;
     font-size: 1rem;
@@ -473,13 +489,20 @@ main {
     }
     
     .header-nav {
-        gap: 8px;
+        gap: 6px;
+        flex-wrap: wrap;
     }
     
     .btn {
         padding: 10px 20px;
         font-size: 0.875rem;
         min-width: 90px;
+    }
+    
+    .btn-ghost {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+        min-width: 60px;
     }
     
     .btn-large {
