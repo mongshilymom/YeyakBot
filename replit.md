@@ -18,6 +18,7 @@ Preferred communication style: Simple, everyday language.
 - **Landing Page** (`index.html`): Hero section with dual CTAs, benefit cards, customer results section, pricing display, FAQ section, and service sections
 - **Booking Page** (`booking.html`): Enhanced Google Forms integration with loading states and error handling
 - **Demo Page** (`demo.html`): Enhanced Calendly widget integration with loading states and fallback contact options
+- **Legal Pages** (`privacy.html`, `terms.html`): Comprehensive privacy policy and terms of service with guarantee clauses
 - **Error Handling**: Custom 404 page with auto-redirect to home
 - **Navigation**: Enhanced header with KakaoTalk channel and phone contact options
 
