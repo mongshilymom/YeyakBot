@@ -35,9 +35,10 @@ Preferred communication style: Simple, everyday language.
 
 ## Asset Management
 - **Vector Graphics**: SVG logo optimized to ~2KB with stroke-based design
-- **Favicons**: Standard ICO format favicon
-- **Social Images**: Optimized OG image at 1200x630px, ~40KB
+- **Favicons**: Placeholder SVG favicon (needs ICO conversion for production)
+- **Social Images**: SVG OG image at 1200x630px (needs JPG conversion for production)
 - **CSS Architecture**: Single stylesheet with modular sections for maintainability
+- **Total Size**: Core files under 64KB (excluding images)
 
 ## Accessibility Features
 - **ARIA Labels**: Proper labeling for all interactive elements
