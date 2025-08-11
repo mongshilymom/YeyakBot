@@ -46,10 +46,11 @@
 
 ## 완성 후 해야 할 일
 
-### 1. 폼 링크 교체
-- `booking.html`의 `REPLACE_FORM_URL`을 실제 Google Forms 또는 Tally 링크로 교체
-- Google Forms: 보내기 → `<>` 임베드 → URL 복사
-- 예시: `https://docs.google.com/forms/d/XXXXX/viewform?embedded=true`
+### 1. Google Forms 설정 및 URL 교체
+- `google-forms-setup.md` 가이드를 따라 Google Forms 생성
+- 질문 구성: 성함, 연락처, 업체명/업종, 지역, 문의유형, 예산범위, 희망통화시간, 추가내용
+- `booking.html`의 `REPLACE_GOOGLE_FORM_URL`을 실제 임베드 URL로 교체
+- 임베드 설정: 폭 100%, 높이 900px
 
 ### 2. 캘린더 링크 교체  
 - `demo.html`의 `REPLACE_CALENDLY_URL`을 실제 Calendly 링크로 교체

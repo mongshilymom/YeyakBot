@@ -329,6 +329,25 @@
         }
     };
 
+    // Form loading and error handling for booking page
+    window.hideFormLoading = function() {
+        const loading = document.getElementById('form-loading');
+        const iframe = document.getElementById('booking-form');
+        if (loading && iframe) {
+            loading.style.display = 'none';
+            iframe.style.display = 'block';
+        }
+    };
+
+    window.showFormError = function() {
+        const loading = document.getElementById('form-loading');
+        const iframe = document.getElementById('booking-form');
+        const error = document.getElementById('form-error');
+        if (loading) loading.style.display = 'none';
+        if (iframe) iframe.style.display = 'none';
+        if (error) error.style.display = 'block';
+    };
+
     // FAQ Manager for accessibility and interactions
     const FAQManager = {
         init() {
