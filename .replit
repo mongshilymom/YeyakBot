@@ -29,3 +29,7 @@ waitForPort = 5000
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[deployment]
+deploymentTarget = "cloudrun"
+run = ["sh", "-c", "python3 -m http.server $PORT --bind 0.0.0.0"]
