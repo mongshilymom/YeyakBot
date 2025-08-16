@@ -16,7 +16,10 @@ Preferred communication style: Simple, everyday language.
 - **URL Structure Enhancement**: Added /booking and /demo redirect folders for cleaner URLs
 - **Form Integration**: Updated placeholder URLs to clear deployment format with Korean instructions
 - **Navigation Optimization**: All CTA links updated to use /booking and /demo short URLs
-- **JavaScript Tracking**: Updated analytics and UTM tracking to support both long and short URL formats
+- **JavaScript Tracking**: Updated analytics and UTM tracking to support both long and short URL formats  
+- **Booking System Enhancement**: Implemented dual booking system - brand version (iframe embed) and lite version (new window)
+- **GA4 Tracking Variants**: Added differentiated tracking - brand_backup, lite variants for conversion analysis
+- **Cloudflare Rules**: Prepared redirect rule for /booking?lite=1 parameter routing to lite version
 - **User Satisfaction**: User expressed satisfaction with results (August 16, 2025) - project ready for production deployment
 
 # System Architecture
