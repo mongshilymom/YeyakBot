@@ -109,5 +109,13 @@
     </div>
 
     <script src="js/app.js"></script>
+    <script>
+    // Demo 백업 링크 클릭 추적
+    document.querySelectorAll('a[onclick*="schedule_click"]').forEach(a=>{
+      a.addEventListener('click',()=>{ 
+        gtag&&gtag('event','schedule_click',{variant:'demo_backup'}); 
+      });
+    });
+    </script>
 </body>
 </html>

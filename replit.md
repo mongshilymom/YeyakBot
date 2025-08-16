@@ -20,6 +20,9 @@ Preferred communication style: Simple, everyday language.
 - **Booking System Enhancement**: Implemented dual booking system - brand version (iframe embed) and lite version (new window)
 - **GA4 Tracking Variants**: Added differentiated tracking - brand_backup, lite variants for conversion analysis
 - **Cloudflare Rules**: Prepared redirect rule for /booking?lite=1 parameter routing to lite version
+- **404 Issue Resolution**: Comprehensive fix for all booking/demo/thank-you routes with proper GA4 tracking
+- **Static File Routing**: All pages now work with static files only, Cloudflare rules optional for optimization
+- **Example URLs**: Replaced all placeholders with realistic example URLs for testing
 - **User Satisfaction**: User expressed satisfaction with results (August 16, 2025) - project ready for production deployment
 
 # System Architecture
