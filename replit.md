@@ -6,6 +6,15 @@ YEYAKBOT is a static website MVP for a Korean small business service that conver
 
 Preferred communication style: Simple, everyday language.
 
+# Recent Changes (August 2025)
+
+- **Performance Optimization Complete**: All legal documents simplified to lightweight 6-section format
+- **Analytics Enhancement**: GA4 tracking code minified with dynamic URL configuration for easy deployment 
+- **Mobile CTA Optimization**: Sticky mobile conversion bar implemented for enhanced mobile user experience
+- **Fallback Links Updated**: Simplified Korean text format ("안 보이면 여기에서 열기") across all forms
+- **404 Page Optimized**: Ultra-minimal 5-line format for improved performance
+- **User Satisfaction**: User expressed satisfaction with results (August 16, 2025) - project ready for production deployment
+
 # System Architecture
 
 ## Frontend Architecture
