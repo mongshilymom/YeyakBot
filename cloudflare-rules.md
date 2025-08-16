@@ -1,11 +1,11 @@
 # Cloudflare Rules for YEYAKBOT
 
-## Redirect Rule 1: Booking Lite Parameter
+## Redirect Rule 1: Booking Lite Parameter (개선됨)
 
 **조건 (Condition):**
 ```
 (http.host eq "yeyakbot.com" and
- http.request.uri.path eq "/booking" and
+ (http.request.uri.path eq "/booking" or http.request.uri.path eq "/booking.html") and
  http.request.uri.query contains "lite=1")
 ```
 
