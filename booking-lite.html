@@ -10,5 +10,9 @@ gtag('js',new Date()); gtag('config','G-XXXXXXX');</script>
 </head><body>
 <h1>3분 예약</h1>
 <p>아래 버튼을 누르면 예약 폼이 새 창으로 열립니다.</p>
-<p><a class="btn" href="https://forms.gle/1FAIpQLSf_EXAMPLE_FORM_ID" target="_blank" rel="noopener" onclick="gtag('event','lead_click',{variant:'lite'})">예약 폼 열기</a></p>
+<p><a id="openForm" href="https://forms.gle/실제_폼_ID" target="_blank" rel="noopener" class="btn">예약 폼 열기</a></p>
+<script>
+// (head에 gtag 스니펫이 있다면 아래 한 줄만 필요)
+document.getElementById('openForm').addEventListener('click',()=>gtag('event','lead_click',{variant:'lite'}));
+</script>
 </body></html>
