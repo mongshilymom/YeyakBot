@@ -1,6 +1,6 @@
 # Cloudflare Rules for YEYAKBOT
 
-## Redirect Rule: Booking Lite Parameter
+## Redirect Rule 1: Booking Lite Parameter
 
 **조건 (Condition):**
 ```
@@ -17,6 +17,24 @@
 **결과:**
 - `yeyakbot.com/booking?lite=1` → `yeyakbot.com/booking-lite.html?lite=1`
 - `yeyakbot.com/booking?lite=1&utm_source=facebook` → `yeyakbot.com/booking-lite.html?lite=1&utm_source=facebook`
+
+## Redirect Rule 2: Booking Lite Path Normalization
+
+**조건 (Condition):**
+```
+(http.host eq "yeyakbot.com" and
+ (http.request.uri.path eq "/booking-lite" or http.request.uri.path eq "/booking-lite/"))
+```
+
+**액션 (Action):**
+- Type: Dynamic redirect
+- Expression: `concat("/booking-lite.html", http.request.uri.query ne "" and "?" or "", http.request.uri.query)`
+- Status code: 301 (Permanent redirect)
+
+**결과:**
+- `yeyakbot.com/booking-lite` → `yeyakbot.com/booking-lite.html`
+- `yeyakbot.com/booking-lite/` → `yeyakbot.com/booking-lite.html`
+- UTM 파라미터 보존됨
 
 ## Cache Rules (권장)
 
