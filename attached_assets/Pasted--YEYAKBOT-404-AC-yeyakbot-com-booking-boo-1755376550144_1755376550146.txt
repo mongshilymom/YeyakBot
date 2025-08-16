@@ -1,0 +1,124 @@
+[긴급] YEYAKBOT 예약 경로 404/리다이렉트 자가수정 요청 (재현·가설·AC 포함)
+
+배경
+
+서비스: yeyakbot.com (예약봇)
+
+목표: /booking, /booking-lite, /demo, /thank-you 경로 안정화 및 GA4 이벤트 일관성
+
+현재 증상 (2025-08-17 KST 재현됨)
+
+https://yeyakbot.com/booking : 브랜드형 페이지는 대체로 열림(간헐 이슈 가능)
+
+https://yeyakbot.com/booking?lite=1 : 라이트 강제 진입 실패(폼 직행 안 됨)
+
+https://yeyakbot.com/booking-lite : 404 발생(또는 폼 미열림)
+
+https://yeyakbot.com/demo : 대체로 정상, 간헐 이슈 가능
+
+원인 가설
+
+정적 파일/라우트 누락 또는 상대경로 사용(폼 임베드/링크가 절대 URL이 아님).
+
+Cloudflare 리다이렉트/원본 불일치(apex·www가 서로 다른 원본을 보거나, 와일드카드로 무한루프).
+
+테스트 도중 가짜 링크(폼 플레이스홀더) 사용으로 외부 서비스에서 “Invalid link”.
+
+요청 작업(자가수정 범위)
+A. 앱/정적 파일 정리(Cloudflare 없이도 동작하도록)
+
+프로젝트 루트에 다음 페이지 존재 보장(없으면 생성):
+
+booking.html : Google Form 절대 URL 임베드 + “새 창 열기” 백업 버튼
+
+booking-lite.html : 버튼 1개로 forms.gle 실제 링크 새 창
+
+demo.html : Calendly 임베드(또는 버튼)
+
+thank-you.html : ?type=lead|schedule에 따라 GA4 이벤트 전송
+
+폼/캘린들리 링크는 실제 운영 링크로 교체 (편집 링크·플레이스홀더 금지)
+
+모든 링크/임베드는 절대 URL(https://...) 로 통일 (상대경로 사용 금지)
+
+B. 앱 라우팅(선호안: Next.js라면 .html 제거)
+
+가능하면 /booking, /booking-lite, /demo, /thank-you 라우트로 직접 서빙
+
+.html 페이지는 레거시 호환 리다이렉트만 두거나 제거
+
+C. 테스트 코드/스니펫 삽입(필요 시 아래 복붙)
+
+GA4 스니펫(레이아웃/헤드 공통)
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date()); gtag('config','G-XXXXXXX');</script>
+
+
+booking.html 백업 버튼 예:
+
+<p style="margin-top:16px">
+임베드가 보이지 않으면 <a href="https://forms.gle/<SHORT_FORM_ID>" target="_blank" rel="noopener">예약 폼을 새 창에서 여세요</a>.
+</p>
+
+
+thank-you.html 이벤트:
+
+<script>
+const t=new URLSearchParams(location.search).get('type');
+if(t==='lead'||t==='schedule') gtag('event',t);
+</script>
+
+
+D. Cloudflare 관련(권한 없으면 제안만)
+
+기본 동작이 앱/정적 파일만으로 OK하도록 만들고, 아래는 제안:
+
+/booking → /booking.html (정적 URL 301, 정확 경로 매칭)
+
+/demo → /demo.html (정적 URL 301)
+
+/booking-lite → forms.gle/<SHORT_FORM_ID> (정적 URL 301)
+
+www → apex 301 (쿼리 보존)
+
+주의: 와일드카드(*) 대신 Custom filter expression로 정확 경로만 매칭, Static Redirect 사용.
+
+작업 필요 시 Cloudflare 권한 요청 바랍니다.
+
+수정 후 제출물(AC: Acceptance Criteria)
+
+접속 OK
+
+/booking 200(임베드 보임)
+
+/booking?lite=1 → /booking-lite.html 또는 forms.gle로 301 후 200
+
+/booking-lite → /booking-lite.html 301 후 200 (또는 폼 직행)
+
+/demo 200(임베드 보임)
+
+절대 URL 사용: 임베드/버튼의 src/href가 모두 https://...
+
+GA4 이벤트:
+
+/booking에서 “새 창 열기” 클릭 시 lead_click 1건
+
+/demo에서 버튼/임베드 클릭 시 schedule_click 1건
+
+/thank-you?type=lead|schedule 호출 시 해당 이벤트 기록
+
+리다이렉트 품질: 301 사용, 쿼리 보존, 무한루프 없음
+
+테스트 리포트: 위 4개 경로의 상태코드/최종 URL/스크린샷 1장씩
+
+참고 스택/제약
+
+현재 운영은 Replit 기준. 차후 Vercel/AWS로 전환 가능(단일 원본 원칙).
+
+Cloudflare 설정은 별도 권한 필요. 권한 없으면 대체안(앱 라우팅/정적 파일만)으로 해결해 주세요.
+
+타임라인
+
+가능한 즉시. 완료 후 결과 리포트와 코드 diff 공유 요청.
