@@ -115,7 +115,7 @@
 
         // Attach UTM parameters to CTA links
         attachUTMToLinks: function() {
-            const ctaLinks = document.querySelectorAll('a[href="booking.html"], a[href="demo.html"]');
+            const ctaLinks = document.querySelectorAll('a[href="/booking"], a[href="/demo"], a[href="booking.html"], a[href="demo.html"]');
             const utmQuery = UTMManager.buildUTMQueryString();
             
             if (utmQuery) {
@@ -302,7 +302,7 @@
         },
 
         trackCTAClicks: function() {
-            const ctaButtons = document.querySelectorAll('a[href*="booking.html"], a[href*="demo.html"]');
+            const ctaButtons = document.querySelectorAll('a[href*="booking"], a[href*="demo"]');
             
             ctaButtons.forEach(button => {
                 button.addEventListener('click', (e) => {
