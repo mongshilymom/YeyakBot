@@ -28,13 +28,14 @@
 
 **액션 (Action):**
 - Type: Dynamic redirect
-- Expression: `concat("/booking-lite.html", http.request.uri.query ne "" and "?" or "", http.request.uri.query)`
+- URL: `/booking-lite.html`
 - Status code: 301 (Permanent redirect)
+- Preserve query string: Yes
 
 **결과:**
 - `yeyakbot.com/booking-lite` → `yeyakbot.com/booking-lite.html`
 - `yeyakbot.com/booking-lite/` → `yeyakbot.com/booking-lite.html`
-- UTM 파라미터 보존됨
+- `yeyakbot.com/booking-lite?utm_source=facebook` → `yeyakbot.com/booking-lite.html?utm_source=facebook`
 
 ## Redirect Rule 3: Thank You Path
 **조건 (Condition):**
