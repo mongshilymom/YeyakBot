@@ -34,6 +34,8 @@ Preferred communication style: Simple, everyday language.
 - **GA4 Standardization**: Unified GA4 snippet format across all 8 pages with clear TODO markers for deployment
 - **Google Apps Script Integration**: Complete form automation setup with email notifications, backend API, GA4 Measurement Protocol, and Slack alerts
 - **Backend API Enhancement**: Updated /api/lead endpoint to handle both native forms and Google Forms webhook data
+- **GA4 Event Tracking Comprehensive**: Implemented complete place/variant parameter system across all CTA buttons and interactions
+- **Event Tracking System**: Complete GA4 analytics with place parameters (hero/nav/floating) and variant parameters (brand/lite/iframe_backup/open_form)
 
 # System Architecture
 
