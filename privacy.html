@@ -22,10 +22,14 @@
     <meta name="google-site-verification" content="REPLACE_GOOGLE_TOKEN">
     <meta name="naver-site-verification" content="YOUR_NAVER_TOKEN">
     
-    <!-- Google Analytics 4 -->
+    <!-- GA4 base (TODO: G-XXXX 자리만 교체) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
-    gtag('js',new Date()); gtag('config','G-XXXXXXX');</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');  // TODO: GA4 측정ID
+    </script>
     
     <link rel="stylesheet" href="css/style.css">
 </head>

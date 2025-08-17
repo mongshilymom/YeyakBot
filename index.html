@@ -26,10 +26,14 @@
     <meta name="twitter:description" content="3분 설치, 24/7 자동응답으로 놓친 전화를 예약으로 전환. 전환 없으면 그달 구독료 0원 보장.">
     <meta name="twitter:image" content="https://yeyakbot.com/assets/og.png">
     
-    <!-- Google Analytics 4 -->
+    <!-- GA4 base (TODO: G-XXXX 자리만 교체) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
-    gtag('js',new Date()); gtag('config','G-XXXXXXX');</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX');  // TODO: GA4 측정ID
+    </script>
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">

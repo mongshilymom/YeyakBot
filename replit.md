@@ -31,6 +31,7 @@ Preferred communication style: Simple, everyday language.
 - **Backend API Testing**: Verified /api/lead endpoint with SQLite data storage and proper JSON responses
 - **Google Forms Integration**: Added real Google Forms URLs to booking-lite.html and booking-iframe.html
 - **Multi-approach Booking**: Created three booking variants - native form (booking.html), iframe embed (booking-iframe.html), lite version (booking-lite.html)
+- **GA4 Standardization**: Unified GA4 snippet format across all 8 pages with clear TODO markers for deployment
 
 # System Architecture
 
