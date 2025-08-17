@@ -156,8 +156,9 @@
                         <!-- 구글 폼 백업 (선택사항) -->
                         <div class="backup-form" style="margin-top: 24px; text-align: center;">
                             <p style="font-size: 14px; color: #666;">
-                                또는 <a href="https://forms.gle/실제_SHORT_ID" target="_blank" rel="noopener" onclick="gtag&&gtag('event','lead_click',{variant:'brand_backup'})" style="color: #007bff;">구글 폼으로 신청하기</a>
+                                또는 <a id="backupForm" href="https://forms.gle/실제_SHORT_ID" target="_blank" rel="noopener" style="color: #007bff;">구글 폼으로 신청하기</a>
                             </p>
+                            <script>document.getElementById('backupForm').addEventListener('click',()=>gtag&&gtag('event','lead_click',{variant:'brand_backup'}));</script>
                         </div>
                     </div>
                 </div>
