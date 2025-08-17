@@ -1,0 +1,20 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "한국 소상공인을 위한 \"놓친 전화를 예약으로\" 서비스 소개 웹사이트입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "better-sqlite3": "^12.2.0",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.5"
+  },
+  "type": "module"
+}
