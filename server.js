@@ -99,6 +99,27 @@ app.post('/api/webhook/form', async (req, res) => {
   }
 });
 
+// Native lead form endpoint
+app.post('/api/lead', async (req, res) => {
+  try {
+    const formData = req.body;
+    const clientIP = req.ip;
+    const userAgent = req.get('User-Agent');
+
+    // Store in database
+    const stmt = db.prepare('INSERT INTO submissions (type, data, ip_address, user_agent) VALUES (?, ?, ?, ?)');
+    stmt.run('lead', JSON.stringify(formData), clientIP, userAgent);
+
+    // Send notifications
+    await sendFormNotification(formData);
+
+    res.json({ success: true, message: '예약 접수 완료', redirect: '/thank-you.html' });
+  } catch (error) {
+    console.error('Lead form error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 // Demo webhook  
 app.post('/api/webhook/demo', async (req, res) => {
   try {

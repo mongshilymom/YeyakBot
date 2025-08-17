@@ -447,3 +447,99 @@
     document.head.appendChild(keyboardStyles);
 
 })();
+
+
+// Handle native form submission
+async function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    const formSuccess = document.getElementById('form-success');
+    const formError = document.getElementById('form-error');
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+    
+    // Track GA4 event
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'lead_click', { variant: 'brand' });
+    }
+    
+    try {
+        // Collect form data
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        
+        // Send to backend
+        const response = await fetch('/api/lead', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+            // Hide form and show success
+            form.style.display = 'none';
+            formSuccess.style.display = 'block';
+            
+            // Track conversion
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', { 
+                    event_category: 'lead',
+                    event_label: 'form_submit',
+                    value: 1
+                });
+            }
+        } else {
+            throw new Error(result.error || 'Submission failed');
+        }
+    } catch (error) {
+        console.error('Form submission error:', error);
+        
+        // Hide form and show error
+        form.style.display = 'none';
+        formError.style.display = 'block';
+        
+        // Track error
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'exception', {
+                description: 'form_submit_error',
+                fatal: false
+            });
+        }
+    }
+    
+    return false;
+}
+
+// Reset form to initial state
+function resetForm() {
+    const form = document.getElementById('booking-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    const formSuccess = document.getElementById('form-success');
+    const formError = document.getElementById('form-error');
+    
+    // Reset button state
+    submitBtn.disabled = false;
+    btnText.style.display = 'inline';
+    btnLoading.style.display = 'none';
+    
+    // Show form, hide messages
+    form.style.display = 'block';
+    formSuccess.style.display = 'none';
+    formError.style.display = 'none';
+    
+    // Clear form fields
+    form.reset();
+}
