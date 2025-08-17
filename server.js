@@ -106,12 +106,26 @@ app.post('/api/lead', async (req, res) => {
     const clientIP = req.ip;
     const userAgent = req.get('User-Agent');
 
+    // Handle both native form and Google Forms webhook
+    const leadData = {
+      name: formData.name || formData['이름'],
+      contact: formData.contact || formData.phone,
+      business_type: formData.business_type || formData.service,
+      location: formData.location,
+      inquiry_type: formData.inquiry_type,
+      budget: formData.budget,
+      call_time: formData.call_time || formData.date_pref,
+      notes: formData.notes,
+      channel: formData.channel || 'native_form',
+      utm_source: formData.utm_source
+    };
+
     // Store in database
     const stmt = db.prepare('INSERT INTO submissions (type, data, ip_address, user_agent) VALUES (?, ?, ?, ?)');
-    stmt.run('lead', JSON.stringify(formData), clientIP, userAgent);
+    stmt.run('lead', JSON.stringify(leadData), clientIP, userAgent);
 
     // Send notifications
-    await sendFormNotification(formData);
+    await sendFormNotification(leadData);
 
     res.json({ success: true, message: '예약 접수 완료', redirect: '/thank-you.html' });
   } catch (error) {

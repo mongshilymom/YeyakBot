@@ -32,6 +32,8 @@ Preferred communication style: Simple, everyday language.
 - **Google Forms Integration**: Added real Google Forms URLs to booking-lite.html and booking-iframe.html
 - **Multi-approach Booking**: Created three booking variants - native form (booking.html), iframe embed (booking-iframe.html), lite version (booking-lite.html)
 - **GA4 Standardization**: Unified GA4 snippet format across all 8 pages with clear TODO markers for deployment
+- **Google Apps Script Integration**: Complete form automation setup with email notifications, backend API, GA4 Measurement Protocol, and Slack alerts
+- **Backend API Enhancement**: Updated /api/lead endpoint to handle both native forms and Google Forms webhook data
 
 # System Architecture
 
