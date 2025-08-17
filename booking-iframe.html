@@ -59,18 +59,25 @@
                         설정 완료 즉시 다음 전화부터 놓친 통화가 예약으로 전환됩니다.
                     </p>
                     
-                    <div class="form-container">
+                    <div class="form-container" style="position:relative;min-height:600px;">
+                        <!-- 로딩 상태 -->
+                        <div id="loader" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+                                              font-size:16px;color:#444;background:#fff;z-index:1;">
+                          예약 폼을 로딩 중입니다…
+                        </div>
+                        
                         <!-- 폼 임베드 -->
-                        <iframe
+                        <iframe id="gform"
                           src="https://docs.google.com/forms/d/e/1FAIpQLSdkcrGra4PgZzIuPPbc12Hr8vu_xwZusMO8aFTDwOjSARn1lg/viewform?embedded=true"
-                          width="100%" height="1200" frameborder="0" loading="lazy">
+                          style="position:relative;z-index:2;width:100%;height:1400px;border:0;"
+                          onload="document.getElementById('loader').style.display='none'">
                         </iframe>
 
                         <!-- 보이지 않을 때 새 창으로 열기 -->
                         <p style="margin-top:16px; text-align:center;">
                           안 보이면
                           <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkcrGra4PgZzIuPPbc12Hr8vu_xwZusMO8aFTDwOjSARn1lg/viewform?usp=header"
-                             target="_blank" rel="noopener" onclick="gtag&&gtag('event','lead_click',{variant:'iframe_backup'})">여기에서 열기</a>
+                             target="_blank" rel="noopener" onclick="gtag&&gtag('event','lead_click',{place:'iframe_page',variant:'backup'});">여기에서 열기</a>
                         </p>
                     </div>
                 </div>
