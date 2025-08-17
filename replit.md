@@ -19,11 +19,12 @@ Preferred communication style: Simple, everyday language.
 - **JavaScript Tracking**: Updated analytics and UTM tracking to support both long and short URL formats  
 - **Booking System Enhancement**: Implemented dual booking system - brand version (iframe embed) and lite version (new window)
 - **GA4 Tracking Variants**: Added differentiated tracking - brand_backup, lite variants for conversion analysis
-- **Cloudflare Rules**: Prepared redirect rule for /booking?lite=1 parameter routing to lite version
+- **Cloudflare Rules**: Prepared priority redirect rules for /booking?lite=1 and /booking-lite routing optimization
 - **404 Issue Resolution**: Comprehensive fix for all booking/demo/thank-you routes with proper GA4 tracking
 - **Static File Routing**: All pages now work with static files only, Cloudflare rules optional for optimization
-- **Example URLs**: Replaced all placeholders with realistic example URLs for testing
-- **User Satisfaction**: User expressed satisfaction with results (August 16, 2025) - project ready for production deployment
+- **Booking Lite Optimization**: Implemented ultra-clean 4-line booking-lite.html with addEventListener tracking
+- **Backend Service Config**: Environment variables documented for SMTP, Slack, admin authentication integration
+- **Production Ready**: Cloudflare priority rules finalized, environment configuration complete (August 17, 2025)
 
 # System Architecture
 
@@ -81,6 +82,12 @@ Preferred communication style: Simple, everyday language.
 - **Error Handling**: Loading states with fallback contact options
 - **Confirmation**: Redirect to yeyakbot.com homepage after booking
 
+## Backend Services (Optional Integration)
+- **SMTP Email**: Gmail SMTP for automated booking notifications (founder@yeyakbot.com)
+- **Slack Webhooks**: Real-time team notifications for new bookings and demos
+- **Admin Authentication**: Token-based access control for management dashboard
+- **Environment Variables**: Comprehensive configuration for production deployment
+
 ## Social Media Integration
 - **Kakao Channel**: Placeholder integration for Korean messaging platform (pf.kakao.com/_yeyakbot)
 - **Social Sharing**: Open Graph and Twitter Card meta tags for social media sharing
@@ -92,6 +99,7 @@ Preferred communication style: Simple, everyday language.
 - **Site Verification**: Placeholder meta tags for Google Search Console and Naver verification
 
 ## CDN and Hosting
-- **Static Hosting**: Designed for deployment on static hosting platforms
+- **Static Hosting**: Designed for deployment on static hosting platforms with optional backend integration
 - **Domain Configuration**: Configured for yeyakbot.com domain with proper canonical URLs
+- **Cloudflare Integration**: Priority redirect rules for optimal routing and caching
 - **Performance**: Optimized for CDN delivery with minimal external dependencies
