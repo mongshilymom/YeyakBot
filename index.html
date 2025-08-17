@@ -96,19 +96,123 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">놓친 전화를 예약으로.<br>광고비 0원, 첫 달 성과형.</h1>
-                    <p class="hero-subtitle">3분 설치 · 24/7 자동응답 · 즉시 견적 · 콜백 예약.<br>전환 없으면 그달 구독료 0원.</p>
-                    <div class="hero-cta">
-                        <a href="/booking" class="btn btn-primary btn-large" aria-label="지금 바로 3분만에 예약 설정" onclick="gtag('event','lead_click',{place:'hero',variant:'brand'});">3분 예약</a>
-                        <a href="/demo" class="btn btn-secondary btn-large" aria-label="20분 데모 예약으로 자세히 알아보기" onclick="gtag('event','schedule_click',{place:'hero'});">20분 데모</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- ================== YEYAKBOT: Hero + Deposit + FAQ (drop-in) ================== -->
+<style>
+  /* ---- Base / utilities (namespaced to avoid conflicts) ---- */
+  .yeyak-wrap{max-width:1100px;margin:0 auto;padding:clamp(16px,3vw,28px)}
+  .yeyak-row{display:grid;gap:18px}
+  .yeyak-2{grid-template-columns:1fr}
+  @media (min-width: 900px){ .yeyak-2{grid-template-columns:1.1fr .9fr} }
+  .yeyak-card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 12px 28px rgba(2,6,23,.06)}
+  .yeyak-pad{padding:clamp(18px,3vw,28px)}
+  .yeyak-muted{color:#64748b}
+  .yeyak-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .yeyak-badge{font-size:12px;padding:6px 10px;border:1px solid #e5e7eb;border-radius:999px;background:#fff}
+  .yeyak-btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 16px;border-radius:10px;border:1px solid #e5e7eb;background:#fff;color:#0f172a;text-decoration:none}
+  .yeyak-btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
+  .yeyak-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+  .yeyak-h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px}
+  .yeyak-lead{margin:0 0 10px;color:#475569;font-size:clamp(15px,2vw,18px)}
+  .yeyak-sec-title{font-size:clamp(20px,2.6vw,28px);margin:0 0 6px}
+  .yeyak-list{display:grid;gap:10px;margin:10px 0 0}
+  .yeyak-li{display:flex;gap:10px;align-items:flex-start}
+  .yeyak-li b{white-space:nowrap}
+  .yeyak-kicker{font-size:12px;color:#6b7280;margin-top:8px}
+  .yeyak-note{font-size:13px;color:#6b7280}
+  /* FAQ */
+  .yeyak-faq details{border:1px solid #e5e7eb;border-radius:12px;background:#fff}
+  .yeyak-faq details+details{margin-top:10px}
+  .yeyak-faq summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:600}
+  .yeyak-faq summary::-webkit-details-marker{display:none}
+  .yeyak-faq .faq-body{padding:0 18px 16px;color:#475569}
+  /* Hero background */
+  .yeyak-hero{background:linear-gradient(180deg,#f8fafc 0%, #ffffff 60%)}
+</style>
+
+<!-- ========== HERO (무엇/왜/무엇을 하라) ========== -->
+<section class="yeyak-hero">
+  <div class="yeyak-wrap yeyak-row yeyak-2">
+    <div class="yeyak-pad">
+      <h1 class="yeyak-h1">놓친 문의를 '예약'으로</h1>
+      <p class="yeyak-lead">전화·카톡·웹 폼을 한곳에서 받고, <b>즉시 응답 → 보증금 결제 → 배차 확정</b>까지 자동화합니다.<br>야간·주말에도 고객이 떠나기 전에 예약이 완료됩니다.</p>
+      <div class="yeyak-cta">
+        <a class="yeyak-btn primary" href="/booking" onclick="gtag&&gtag('event','lead_click',{place:'hero',variant:'brand'});">지금 예약 시작</a>
+        <a class="yeyak-btn" href="/demo" onclick="gtag&&gtag('event','schedule_click',{place:'hero'});">데모 예약</a>
+      </div>
+      <div class="yeyak-badges">
+        <span class="yeyak-badge">토스 안전결제</span>
+        <span class="yeyak-badge">개인정보 암호화</span>
+        <span class="yeyak-badge">설치 지원</span>
+      </div>
+      <div class="yeyak-kicker">※ 도입 1시간 내 시연 가능</div>
+    </div>
+
+    <div class="yeyak-pad">
+      <div class="yeyak-card yeyak-pad">
+        <h3 class="yeyak-sec-title">한 눈에 보는 작동 방식</h3>
+        <ol class="yeyak-list" style="counter-reset: step">
+          <li class="yeyak-li"><b>① 문의 접수</b><span>전화/카톡/웹폼으로 들어온 문의를 통합 수신</span></li>
+          <li class="yeyak-li"><b>② 즉시 응답</b><span>부족 정보만 확인하고 선택 슬롯 제시</span></li>
+          <li class="yeyak-li"><b>③ 보증금 결제</b><span>안전결제 링크 전송, 고객이 결제하면</span></li>
+          <li class="yeyak-li"><b>④ 예약 확정</b><span>일정 잠금·배차 완료, 고객 알림 발송</span></li>
+        </ol>
+        <p class="yeyak-note" style="margin-top:10px">전 과정은 인앱 알림으로 실시간 확인됩니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DEPOSIT(보증금) 섹션 ========== -->
+<section id="deposit" class="yeyak-wrap yeyak-row" style="margin-top:8px">
+  <div class="yeyak-card yeyak-pad">
+    <h2 class="yeyak-sec-title">왜 보증금이 필요한가요?</h2>
+    <p class="yeyak-muted" style="margin:0">노쇼를 줄이고 스케줄을 확정하기 위한 최소 예치금입니다. 고객에게는 명확한 약속, 사장님께는 일정 안정성을 제공합니다.</p>
+    <div class="yeyak-row" style="margin-top:14px;grid-template-columns:repeat(3,1fr)">
+      <div class="yeyak-card yeyak-pad" style="border-radius:12px">
+        <b>금액</b>
+        <div class="yeyak-muted">예치 <b>₩50,000</b> (맞춤 가능)</div>
+      </div>
+      <div class="yeyak-card yeyak-pad" style="border-radius:12px">
+        <b>환불</b>
+        <div class="yeyak-muted"><b>D-1 20시</b> 이전 전액 환불, 이후 취소 시 전액 차감 *</div>
+      </div>
+      <div class="yeyak-card yeyak-pad" style="border-radius:12px">
+        <b>안전</b>
+        <div class="yeyak-muted">토스(Toss) 안전결제, 전자영수증 즉시 발급</div>
+      </div>
+    </div>
+    <p class="yeyak-note" style="margin-top:10px">* 정확한 환불/취소 규정은 <a href="/terms">이용약관</a>을 따릅니다. 개인정보 처리 및 보관은 <a href="/privacy">개인정보처리방침</a>에 명시됩니다.</p>
+    <div class="yeyak-cta">
+      <a class="yeyak-btn primary" href="/booking" onclick="gtag&&gtag('event','lead_click',{place:'deposit',variant:'brand'});">지금 예약 시작</a>
+      <a class="yeyak-btn" href="/demo" onclick="gtag&&gtag('event','schedule_click',{place:'deposit'});">데모 예약</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ 섹션 (details/summary: JS 없이 접힘) ========== -->
+<section class="yeyak-wrap yeyak-faq" style="margin-top:8px;margin-bottom:24px">
+  <h2 class="yeyak-sec-title">자주 묻는 질문</h2>
+
+  <details onclick="gtag&&gtag('event','faq_open',{question:'보증금은 어디로 결제하나요?'});">
+    <summary>보증금은 어디로 결제하나요?</summary>
+    <div class="faq-body">토스(Toss) 안전결제로 결제되며, 고객에게 전자영수증이 즉시 발급됩니다. 결제 링크는 문자/카톡/웹에서 전송 가능합니다.</div>
+  </details>
+
+  <details onclick="gtag&&gtag('event','faq_open',{question:'취소/환불 규정은 어떻게 되나요?'});">
+    <summary>취소/환불 규정은 어떻게 되나요?</summary>
+    <div class="faq-body">기본 정책은 <b>D-1 20시 이전 전액 환불</b>, 이후 취소 시 예치금 100% 차감입니다. 업종/시즌에 맞게 맞춤 설정도 가능합니다. 자세한 내용은 <a href="/terms">이용약관</a>을 참고해주세요.</div>
+  </details>
+
+  <details onclick="gtag&&gtag('event','faq_open',{question:'개인정보는 안전한가요?'});">
+    <summary>개인정보는 안전한가요?</summary>
+    <div class="faq-body">전송·보관 구간 암호화, 최소 수집 원칙, 접근 로그 기록, 열람/삭제 요청 창구를 운영합니다. <a href="/privacy">개인정보처리방침</a>에서 세부 항목을 확인할 수 있어요.</div>
+  </details>
+
+  <details onclick="gtag&&gtag('event','faq_open',{question:'도입에는 얼마나 걸리나요?'});">
+    <summary>도입에는 얼마나 걸리나요?</summary>
+    <div class="faq-body">폼 연결 10분, 결제 연동 20분, 안내문/정책 셋업 포함해 보통 <b>1시간 내 시연</b>이 가능합니다.</div>
+  </details>
+</section>
 
         <!-- Benefits Section -->
         <section class="benefits">
