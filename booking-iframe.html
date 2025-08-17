@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3분 예약 설정 | 예약봇 YEYAKBOT</title>
+    <meta name="description" content="간단한 정보만 입력하시면 예약봇 팀에서 직접 연락드려 3분만에 설정을 완료해드립니다.">
+    <meta name="keywords" content="예약봇, 전화예약, 자동예약, 소상공인, 예약시스템">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="3분 예약 설정 | 예약봇 YEYAKBOT">
+    <meta property="og:description" content="간단한 정보만 입력하시면 예약봇 팀에서 직접 연락드려 3분만에 설정을 완료해드립니다.">
+    <meta property="og:url" content="https://yeyakbot.com/booking">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yeyakbot.com/assets/og.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yeyakbot.com/booking">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+    gtag('js',new Date()); gtag('config','G-XXXXXXX');</script>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="예약봇 로고" width="32" height="32">
+                    <a href="index.html" class="logo-text">예약봇 YEYAKBOT</a>
+                </div>
+                <nav class="header-nav">
+                    <a href="/booking" class="btn btn-secondary" aria-label="3분만에 예약 설정하기">3분 예약</a>
+                    <a href="/demo" class="btn btn-primary" aria-label="20분 데모 예약하기">20분 데모</a>
+                    <a href="https://pf.kakao.com/_yeyakbot" class="btn btn-ghost" target="_blank" rel="noopener" aria-label="카카오채널로 문의하기">카카오</a>
+                    <a href="tel:01000000000" class="btn btn-ghost" aria-label="전화로 문의하기">전화</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="booking-section">
+            <div class="container">
+                <div class="booking-content">
+                    <h1>3분 예약 설정</h1>
+                    <p class="booking-description">
+                        간단한 정보만 입력하시면 예약봇 팀에서 직접 연락드려 3분만에 설정을 완료해드립니다.<br>
+                        설정 완료 즉시 다음 전화부터 놓친 통화가 예약으로 전환됩니다.
+                    </p>
+                    
+                    <div class="form-container">
+                        <!-- 폼 임베드 -->
+                        <iframe
+                          src="https://docs.google.com/forms/d/e/1FAIpQLSdkcrGra4PgZzIuPPbc12Hr8vu_xwZusMO8aFTDwOjSARn1lg/viewform?embedded=true"
+                          width="100%" height="1200" frameborder="0" loading="lazy">
+                        </iframe>
+
+                        <!-- 보이지 않을 때 새 창으로 열기 -->
+                        <p style="margin-top:16px; text-align:center;">
+                          안 보이면
+                          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkcrGra4PgZzIuPPbc12Hr8vu_xwZusMO8aFTDwOjSARn1lg/viewform?usp=header"
+                             target="_blank" rel="noopener" onclick="gtag&&gtag('event','lead_click',{variant:'iframe_backup'})">여기에서 열기</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 예약봇 · YEYAKBOT</p>
+                <div class="footer-links">
+                    <a href="privacy.html">개인정보처리방침</a>
+                    <a href="terms.html">이용약관</a>
+                    <a href="robots.txt">robots.txt</a>
+                    <a href="sitemap.xml">sitemap.xml</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta">
+        <a class="ghost" href="/booking">3분 예약</a>
+        <a class="ghost" href="https://pf.kakao.com/_yeyakbot" target="_blank" rel="noopener">카카오</a>
+        <a class="call" href="tel:01000000000">전화</a>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

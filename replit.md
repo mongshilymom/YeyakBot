@@ -29,6 +29,8 @@ Preferred communication style: Simple, everyday language.
 - **Native Form Implementation**: Replaced Google Forms iframe with responsive native HTML form connected to /api/lead endpoint
 - **Complete Form Processing**: Full form submission with loading states, success/error handling, and GA4 conversion tracking
 - **Backend API Testing**: Verified /api/lead endpoint with SQLite data storage and proper JSON responses
+- **Google Forms Integration**: Added real Google Forms URLs to booking-lite.html and booking-iframe.html
+- **Multi-approach Booking**: Created three booking variants - native form (booking.html), iframe embed (booking-iframe.html), lite version (booking-lite.html)
 
 # System Architecture
 
