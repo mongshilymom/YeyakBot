@@ -38,6 +38,7 @@ Preferred communication style: Simple, everyday language.
 - **Event Tracking System**: Complete GA4 analytics with place parameters (hero/nav/floating) and variant parameters (brand/lite/iframe_backup/open_form)
 - **Booking Page Ultra-Optimization**: Complete rewrite to minimal, fast-loading design with embedded Google Forms and optimized CSS
 - **Homepage Hero Enhancement**: Integrated ultra-optimized Hero+Deposit+FAQ sections with inline CSS and advanced GA4 tracking
+- **Demo Page Calendly Integration**: Implemented proper Calendly inline widget with yeyakbot/20min-demo event and GA4 tracking
 
 # System Architecture
 
