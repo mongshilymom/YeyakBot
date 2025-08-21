@@ -28,6 +28,7 @@
       gtag('config', 'G-XXXXXXX');  // TODO: GA4 측정ID
     </script>
     
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -64,9 +65,15 @@
                              data-url="https://calendly.com/yeyakbot/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=ffffff&text_color=111111&primary_color=0ea5e9"
                              style="min-width:320px;height:740px"></div>
                         
-                        <p style="margin-top:16px; text-align:center; color:#666; font-size:14px;">
-                            임베드가 보이지 않으면 <a href="https://calendly.com/yeyakbot/30min" target="_blank" rel="noopener" onclick="gtag&&gtag('event','schedule_click',{place:'demo_backup',variant:'open_form'});" style="color:#2563eb;">데모 예약을 새 창에서 여세요</a>.
-                        </p>
+                        <div style="margin-top:16px; text-align:center;">
+                            <button onclick="Calendly.initPopupWidget({url: 'https://calendly.com/yeyakbot/30min'});gtag&&gtag('event','schedule_click',{place:'demo_popup',variant:'popup'});return false;" style="background:#2563eb;color:#fff;border:none;padding:12px 24px;border-radius:8px;cursor:pointer;font-size:16px;margin:0 8px 8px 0;">
+                                팝업으로 예약하기
+                            </button>
+                            <br>
+                            <span style="color:#666; font-size:14px;">
+                                임베드가 보이지 않으면 <a href="https://calendly.com/yeyakbot/30min" target="_blank" rel="noopener" onclick="gtag&&gtag('event','schedule_click',{place:'demo_backup',variant:'open_form'});" style="color:#2563eb;">새 창에서 열기</a>
+                            </span>
+                        </div>
                         
                         <div style="margin-top:24px; padding-top:20px; border-top:1px solid #eee; text-align:center;">
                             <p style="color:#666; font-size:14px; margin-bottom:16px;">
