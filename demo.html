@@ -94,10 +94,12 @@
 
     <!-- Calendly → GA4 브리지 -->
     <script>
-      // GA4: 데모 페이지 노출 이벤트
+      // GA4: 데모 페이지 노출 이벤트 (중복 방지)
       document.addEventListener('DOMContentLoaded', () => {
         if (typeof gtag === 'function') {
-          gtag('event','schedule_demo_view',{page:'demo.html'});
+          if(!window.__demoFired){ window.__demoFired=true;
+            gtag('event','demo_view',{page_location:location.href});
+          }
         }
       });
 
