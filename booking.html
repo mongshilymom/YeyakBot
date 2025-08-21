@@ -93,14 +93,19 @@
 
   <script>
     // GA4 베이스
-    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config','G-XXXXXXX'); // ← 교체
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date()); gtag('config', 'G-XXXXXXX');  // GA4 ID
 
     // 예약 버튼 클릭 이벤트
     document.addEventListener('DOMContentLoaded', () => {
       const btn = document.querySelector('.yeyak-btn.primary');
       if(btn){ btn.addEventListener('click', () => {
-        gtag('event','lead_submit',{method:'gform'});
+        // 폼 성공 콜백에서:
+        gtag('event','lead_submit',{
+          method:'gform',
+          page_location:location.href
+        });
       }); }
     });
   </script>
