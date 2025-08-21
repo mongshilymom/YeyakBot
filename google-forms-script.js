@@ -56,14 +56,15 @@ function onFormSubmit(e) {
       });
     }
 
-    // 3) GA4 thank_you 이벤트 전송(선택)
+    // 3) GA4 lead_submit 이벤트 전송(선택) - 실제 제출 추적
     if (CONFIG.GA4_MEASUREMENT_ID && CONFIG.GA4_API_SECRET) {
       sendGa4Event({
-        name: 'thank_you',
+        name: 'lead_submit',
         params: {
           form: 'booking',
-          channel: 'web_form',
-          service: service || '(none)'
+          lead_name: name ? 'yes' : 'no',
+          page: 'booking.html',
+          channel: 'web_form'
         }
       });
     }
