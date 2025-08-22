@@ -77,6 +77,26 @@
             </div>
             <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
+            <script>
+            // Calendly 콜백 수신 → GA4 이벤트로 전송
+            window.addEventListener('message', function(e) {
+              if (!e.data || !e.data.event) return;
+              // 임베드에서 발생하는 표준 이벤트들: calendly.event_scheduled, calendly.event_type_viewed 등
+              if (e.data.event === 'calendly.event_scheduled') {
+                gtag('event', 'schedule', {
+                  method: 'calendly',
+                  event_type: '20min_demo'
+                });
+              }
+              if (e.data.event === 'calendly.event_type_viewed') {
+                gtag('event', 'schedule_view', {
+                  method: 'calendly',
+                  event_type: '20min_demo'
+                });
+              }
+            }, false);
+            </script>
+
             <!-- 보조: 새 창 열기 -->
             <p style="margin-top:10px;color:#6b7280;">
                 임베드가 보이지 않으면

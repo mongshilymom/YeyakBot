@@ -15,6 +15,8 @@ analytics:
   events:
     - cta_booking   # 히어로/푸터 등에서 예약 폼 이동
     - cta_demo      # 데모 캘린더 이동
+    - schedule      # Calendly 예약 완료 (20분 데모)
+    - schedule_view # Calendly 위젯 조회
 
 calendly:
   demo:
