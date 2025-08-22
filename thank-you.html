@@ -13,7 +13,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXX'); // 당신의 GA4 ID
+      gtag('config', 'G-XXXXXXX', { 'send_page_view': true }); // 당신의 GA4 ID
 
       // 공통 클릭 트래킹
       function trackClick(name, params={}) {

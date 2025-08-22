@@ -16,6 +16,7 @@ Preferred communication style: Simple, everyday language.
 - **Performance Impact**: Improved real-time event collection accuracy, enhanced social sharing thumbnails, optimized FAQ search visibility
 - **Operational Configuration**: Complete deployment configuration (yeyakbot-config.yaml) with Cloudflare rules, analytics setup, and technical infrastructure specifications
 - **UTM Parameter Preservation**: Universal query string tracking script across all pages for maintaining UTM parameters through navigation (booking/demo link tracking)
+- **GA4 Configuration Enhancement**: Added explicit `send_page_view: true` parameter to all GA4 config calls for improved page view tracking accuracy
 
 - **Performance Optimization Complete**: All legal documents simplified to lightweight 6-section format
 - **Analytics Enhancement**: GA4 tracking code minified with dynamic URL configuration for easy deployment 

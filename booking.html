@@ -24,7 +24,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config','G-XXXXXXX'); // GA4 ID로 교체
+    gtag('config','G-XXXXXXX', { 'send_page_view': true }); // GA4 ID로 교체
 
     function trackClick(name, params={}) {
       try { gtag('event', name, Object.assign({page: location.pathname}, params)); } catch(e){}
