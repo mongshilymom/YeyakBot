@@ -67,12 +67,17 @@ body {
     color: #111;
     text-decoration: none;
     position: relative;
-    z-index: 10;
+    z-index: 10; /* Ensures brand stays above other elements */
 }
 
 .brand:hover {
     opacity: .85;
 }
+
+/* Header layering utilities */
+/* For elements that might cover the header, use:
+   - pointer-events: none; (to allow clicks through)
+   - z-index: 1; (to layer behind brand's z-index: 10) */
 
 .brand strong {
     font-weight: 700;
