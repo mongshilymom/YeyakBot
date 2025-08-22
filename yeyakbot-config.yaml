@@ -26,6 +26,9 @@ calendly:
 forms:
   booking_form_url: "<실제 구글폼 viewform URL>"
   booking_redirect_after_submit: "/demo.html" # (옵션) 폼 제출 완료 시 데모 안내로 이동
+  email_notifications:
+    owner_email: "yeyakbot@gmail.com"
+    form_fields: ["이름", "연락처"]
 
 cdn_cloudflare:
   redirects:

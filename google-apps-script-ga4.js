@@ -18,7 +18,13 @@ function sendLeadToGA4_(payload){
 
 // 기존 onFormSubmit(e) 내부 끝부분에 추가
 function onFormSubmit(e){
-  // ...기존 메일 발송 등 처리...
+  // ===== 이메일 알림 발송 =====
+  var owner = 'yeyakbot@gmail.com';
+  var name  = e.namedValues['이름']?.[0] || '';
+  var phone = e.namedValues['연락처']?.[0] || '';
+  GmailApp.sendEmail(owner, '신규 예약 접수', `이름: ${name}\n연락처: ${phone}\n원본: 스프레드시트 참고`);
+  
+  // ===== GA4 이벤트 전송 =====
   sendLeadToGA4_({
     form_name: '3min_booking',
     channel: 'google_form',
