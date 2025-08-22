@@ -110,5 +110,12 @@
       }); }
     });
   </script>
+  <script>
+    // Brand element click handler
+    document.querySelectorAll('[data-home], .brand').forEach(el => {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', () => location.href = '/index.html');
+    });
+  </script>
 </body>
 </html>

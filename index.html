@@ -360,6 +360,13 @@
         <a class="call" href="tel:01000000000" onclick="gtag('event','call_click',{place:'floating'});">전화</a>
     </div>
 
+    <script>
+      // Brand element click handler
+      document.querySelectorAll('[data-home], .brand').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', () => location.href = '/index.html');
+      });
+    </script>
     <script src="js/app.js"></script>
 </body>
 </html>
