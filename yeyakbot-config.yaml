@@ -1,0 +1,59 @@
+# === YEYAKBOT 사이트 운영 설정 ===
+site:
+  base_url: "https://yeyakbot.com"
+  pages:
+    home: "/"
+    booking: "/booking.html"
+    demo: "/demo.html"
+
+analytics:
+  ga4_id: "G-XXXXXXXX"   # 실제 ID로 교체
+  events:
+    - cta_booking   # 히어로/푸터 등에서 예약 폼 이동
+    - cta_demo      # 데모 캘린더 이동
+
+calendly:
+  demo:
+    url: "https://calendly.com/yeyakbot/30min"
+    widget_params: "hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=1c64f2"
+
+forms:
+  booking_form_url: "<실제 구글폼 viewform URL>"
+  booking_redirect_after_submit: "/demo.html" # (옵션) 폼 제출 완료 시 데모 안내로 이동
+
+cdn_cloudflare:
+  redirects:
+    - name: "booking_to_html"
+      expr: '(http.host eq "yeyakbot.com" and (http.request.uri.path eq "/booking" or http.request.uri.path eq "/booking/"))'
+      target: "https://yeyakbot.com/booking.html"
+      code: 301
+    - name: "demo_to_html"
+      expr: '(http.host eq "yeyakbot.com" and (http.request.uri.path eq "/demo" or http.request.uri.path eq "/demo/"))'
+      target: "https://yeyakbot.com/demo.html"
+      code: 301
+  cache_rules:
+    - path: "/assets/*"     # 정적 자산(이미지/폰트/JS/CSS)
+      ttl: "1y"
+    - path: "*.html"        # 문서
+      ttl: "5m"
+  security:
+    https_only: true
+    hsts: "max-age=604800; includeSubDomains; preload" # 7일
+
+seo:
+  title: "예약봇 YEYAKBOT — 놓친 전화를 예약으로"
+  description: "3분 설치 · 24/7 자동응답 · 즉시 응답 · 보증금 결제 · 배차 연동. 첫 달 성과형 운영."
+  og_image: "https://yeyakbot.com/assets/og-cover.jpg"
+
+sitemaps:
+  robots_txt: |
+    User-agent: *
+    Allow: /
+    Sitemap: https://yeyakbot.com/sitemap.xml
+  sitemap_xml: |
+    <?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url><loc>https://yeyakbot.com/</loc></url>
+      <url><loc>https://yeyakbot.com/booking.html</loc></url>
+      <url><loc>https://yeyakbot.com/demo.html</loc></url>
+    </urlset>
