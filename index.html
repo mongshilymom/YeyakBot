@@ -137,10 +137,17 @@
     <div class="yeyak-pad">
       <h1 class="yeyak-h1">놓친 문의를 '예약'으로</h1>
       <p class="yeyak-lead">전화·카톡·웹 폼을 한곳에서 받고, <b>즉시 응답 → 보증금 결제 → 배차 확정</b>까지 자동화합니다.<br>야간·주말에도 고객이 떠나기 전에 예약이 완료됩니다.</p>
-      <div class="yeyak-cta">
-        <a class="yeyak-btn primary" href="/booking" onclick="gtag&&gtag('event','lead_click',{place:'hero',variant:'brand'});">지금 예약 시작</a>
-        <a class="yeyak-btn" href="/demo" onclick="gtag&&gtag('event','schedule_click',{place:'hero'});">20분 데모</a>
-      </div>
+      <!-- 히어로 CTA -->
+      <p style="margin:16px 0;">
+        <a href="/booking.html" class="btn btn-primary" data-ga="hero_booking" onclick="gtag&&gtag('event','lead_click',{place:'hero',variant:'brand'});">지금 바로 시작</a>
+        <a href="/demo.html" class="btn" data-ga="hero_demo" onclick="gtag&&gtag('event','schedule_click',{place:'hero'});">20분 데모</a>
+      </p>
+
+      <style>
+        .btn{display:inline-block;padding:10px 16px;border:1px solid #d1d5db;border-radius:8px;text-decoration:none;color:#111}
+        .btn-primary{background:#1c64f2;color:#fff;border-color:#1c64f2}
+        .btn:hover{opacity:.9}
+      </style>
       <div class="yeyak-badges">
         <span class="yeyak-badge">토스 안전결제</span>
         <span class="yeyak-badge">개인정보 암호화</span>
@@ -184,10 +191,10 @@
       </div>
     </div>
     <p class="yeyak-note" style="margin-top:10px">* 정확한 환불/취소 규정은 <a href="/terms">이용약관</a>을 따릅니다. 개인정보 처리 및 보관은 <a href="/privacy">개인정보처리방침</a>에 명시됩니다.</p>
-    <div class="yeyak-cta">
-      <a class="yeyak-btn primary" href="/booking" onclick="gtag&&gtag('event','lead_click',{place:'deposit',variant:'brand'});">지금 예약 시작</a>
-      <a class="yeyak-btn" href="/demo" onclick="gtag&&gtag('event','schedule_click',{place:'deposit'});">데모 예약</a>
-    </div>
+    <p style="margin:16px 0;">
+      <a href="/booking.html" class="btn btn-primary" data-ga="deposit_booking" onclick="gtag&&gtag('event','lead_click',{place:'deposit',variant:'brand'});">지금 예약 시작</a>
+      <a href="/demo.html" class="btn" data-ga="deposit_demo" onclick="gtag&&gtag('event','schedule_click',{place:'deposit'});">데모 예약</a>
+    </p>
   </div>
 </section>
 
