@@ -8,6 +8,13 @@ Preferred communication style: Simple, everyday language.
 
 # Recent Changes (August 2025)
 
+## Landing Page Hardening (August 22, 2025)
+- **Brand Link Optimization**: Unified brand links across all pages with root path (/) and consistent aria-labels
+- **GA4 Event Standardization**: Complete tracking parameter optimization (position→pos) with try-catch error handling
+- **SEO Schema Enhancement**: Optimized meta tags with og-cover.jpg, refined JSON-LD FAQPage schema for search indexing
+- **Technical Infrastructure**: Streamlined robots.txt and sitemap.xml for focused core page crawling
+- **Performance Impact**: Improved real-time event collection accuracy, enhanced social sharing thumbnails, optimized FAQ search visibility
+
 - **Performance Optimization Complete**: All legal documents simplified to lightweight 6-section format
 - **Analytics Enhancement**: GA4 tracking code minified with dynamic URL configuration for easy deployment 
 - **Mobile CTA Optimization**: Sticky mobile conversion bar implemented for enhanced mobile user experience
@@ -42,7 +49,8 @@ Preferred communication style: Simple, everyday language.
 - **Google Apps Script GA4 Integration**: Enhanced form processing with GA4 Measurement Protocol for server-side conversion tracking
 - **Header Optimization**: Ultra-optimized header with inline CSS, simplified structure, and enhanced z-index layering
 - **SEO Enhancement**: Optimized meta tags, Open Graph images (og-cover.jpg), enhanced JSON-LD structured data with FAQPage schema
-- **Complete Site Optimization**: Full meta tag standardization, GA4 tracking parameter optimization (position→pos), JSON-LD schema refinement, and GA4 script code unification (August 22, 2025)
+- **Complete Site Optimization**: Full meta tag standardization, GA4 tracking parameter optimization (position→pos), JSON-LD schema refinement, and GA4 script code unification
+- **Landing Page Hardening**: Brand link optimization, unified GA4 event system, enhanced SEO/FAQ schema, robots/sitemap optimization for conversion/SEO stability and improved real-time event collection with social sharing thumbnails (August 22, 2025)
 
 # System Architecture
 
