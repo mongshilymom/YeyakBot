@@ -1,0 +1,26 @@
+## Config (2025-08-22, KST)
+
+product: "예약봇 (리드→보증금→배차)"
+stack:
+  site: "정적 HTML(v0) + Cloudflare"
+  form: "Google Form + Apps Script (onFormSubmit)"
+  demo: "Calendly yeyakbot/30min 임베드"
+  analytics: "GA4 gtag.js"
+  email: "Gmail 알림"
+  dns: "Cloudflare Redirect Rules + 캐시 규칙"
+owner:
+  PM: "you"
+  Build: "you"
+  Review: "you"
+service_links:
+  booking: "https://yeyakbot.com/booking.html"
+  demo: "https://yeyakbot.com/demo.html"
+  home: "https://yeyakbot.com/"
+  calendly_event: "https://calendly.com/yeyakbot/30min"
+ga4:
+  measurement_id: "G-XXXXXXXXXX"
+  events:
+    - name: "lead_submit"      # booking.html 제출 직후
+    - name: "demo_widget_view" # demo.html 위젯 렌더 시 1회
+    - name: "demo_slot_select" # 슬롯 선택 시(선택)
+    - name: "demo_scheduled"   # 예약 완료 시(선택)
