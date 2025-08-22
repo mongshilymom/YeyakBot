@@ -57,14 +57,21 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <strong>예약봇 YEYAKBOT</strong>
-      <span class="grow"></span>
-      <a class="pill active">3분 예약</a>
-      <a class="pill" href="/demo" onclick="gtag&&gtag('event','schedule_click',{place:'nav'});">20분 데모</a>
-    </div>
+  <header class="site-header">
+    <a href="/index.html" class="brand" aria-label="홈으로 이동">예약봇 <strong>YEYAKBOT</strong></a>
+    <nav class="nav">
+      <a href="/booking.html" data-ga="nav_booking" class="active">3분 예약</a>
+      <a href="/demo.html" data-ga="nav_demo" onclick="gtag&&gtag('event','schedule_click',{place:'nav'});">20분 데모</a>
+    </nav>
   </header>
+
+  <style>
+    .site-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    .brand{font-weight:800;text-decoration:none;color:#111;position:relative;z-index:50;cursor:pointer}
+    .brand:hover{opacity:.85}
+    .nav a{margin-left:12px;text-decoration:none;color:#111}
+    .nav a.active{font-weight:600;color:#2563eb}
+  </style>
 
   <main class="container" style="margin-top:8px">
     <section class="pad center">
