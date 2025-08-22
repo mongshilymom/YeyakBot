@@ -41,6 +41,14 @@
     });
   })();
   </script>
+
+  <script>
+  // Google Form 임베드가 아니라 자체 버튼이면, 제출 버튼 핸들러에서 호출
+  function onBookingSubmitSuccess() {
+    gtag('event', 'lead_submit', { form: '3min_booking' });
+    location.href = '/demo.html';
+  }
+  </script>
   
   <style>
     :root{
