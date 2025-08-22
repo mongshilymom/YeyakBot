@@ -16,8 +16,9 @@ analytics:
     - cta_booking   # 히어로/푸터 등에서 예약 폼 이동
     - cta_demo      # 데모 캘린더 이동
     - lead_submit   # 예약 폼 제출 완료 (3분 booking)
-    - schedule      # Calendly 예약 완료 (20분 데모)
-    - schedule_view # Calendly 위젯 조회
+    - demo_widget_view # 데모 위젯 로드 확인 (1회성)
+    - schedule         # Calendly 예약 완료 (20분 데모)
+    - schedule_view    # Calendly 위젯 조회
 
 calendly:
   demo:

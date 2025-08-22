@@ -97,6 +97,23 @@
             }, false);
             </script>
 
+            <script>
+            // 위젯 보이면 1회
+            (function(){
+              let fired = false;
+              const onView = () => {
+                if (!fired) { gtag('event', 'demo_widget_view'); fired = true; }
+              };
+              // Calendly 위젯 DOM 감시
+              const w = document.querySelector('.calendly-inline-widget');
+              if (w) onView();
+              else new MutationObserver((mutations, observer) => {
+                const el = document.querySelector('.calendly-inline-widget');
+                if (el) { onView(); observer.disconnect(); }
+              }).observe(document.body, { childList: true, subtree: true });
+            })();
+            </script>
+
             <!-- 보조: 새 창 열기 -->
             <p style="margin-top:10px;color:#6b7280;">
                 임베드가 보이지 않으면
