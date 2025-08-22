@@ -16,13 +16,20 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
   
-  <!-- GA4 base (TODO: G-XXXX 자리만 교체) -->
+  <!-- GA4 Enhanced Tracking -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
+    // GA4 스니펫이 이미 있다면 생략
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');  // TODO: GA4 측정ID
+    gtag('config', 'G-XXXXXXX'); // 당신의 GA4 ID
+
+    // 공통 클릭 트래킹
+    function trackClick(name, params={}) {
+      if (!window.gtag) return;
+      gtag('event', name, Object.assign({ page: location.pathname }, params));
+    }
   </script>
   
   <style>

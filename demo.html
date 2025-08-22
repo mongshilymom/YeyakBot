@@ -19,13 +19,20 @@
     <meta property="og:url" content="https://yeyakbot.com/demo.html">
     <meta property="og:type" content="website">
     
-    <!-- GA4 base -->
+    <!-- GA4 Enhanced Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
     <script>
+      // GA4 스니펫이 이미 있다면 생략
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config','G-XXXXXXX');
+      gtag('config', 'G-XXXXXXX'); // 당신의 GA4 ID
+
+      // 공통 클릭 트래킹
+      function trackClick(name, params={}) {
+        if (!window.gtag) return;
+        gtag('event', name, Object.assign({ page: location.pathname }, params));
+      }
     </script>
     
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
