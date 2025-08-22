@@ -15,6 +15,7 @@ Preferred communication style: Simple, everyday language.
 - **Technical Infrastructure**: Streamlined robots.txt and sitemap.xml for focused core page crawling
 - **Performance Impact**: Improved real-time event collection accuracy, enhanced social sharing thumbnails, optimized FAQ search visibility
 - **Operational Configuration**: Complete deployment configuration (yeyakbot-config.yaml) with Cloudflare rules, analytics setup, and technical infrastructure specifications
+- **UTM Parameter Preservation**: Universal query string tracking script across all pages for maintaining UTM parameters through navigation (booking/demo link tracking)
 
 - **Performance Optimization Complete**: All legal documents simplified to lightweight 6-section format
 - **Analytics Enhancement**: GA4 tracking code minified with dynamic URL configuration for easy deployment 

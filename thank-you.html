@@ -21,6 +21,17 @@
         gtag('event', name, Object.assign({ page: location.pathname }, params));
       }
     </script>
+
+    <script>
+    (function(){
+      const qs = location.search ? location.search : '';
+      document.querySelectorAll('a[href$="booking.html"], a[href$="demo.html"]').forEach(a=>{
+        // 이미 ?가 있으면 &로 연결
+        const join = a.href.includes('?') ? '&' : '?';
+        a.href = a.href + (qs ? (join + qs.slice(1)) : '');
+      });
+    })();
+    </script>
     
     <link rel="stylesheet" href="css/style.css">
 </head>

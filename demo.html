@@ -32,6 +32,17 @@
         try { gtag('event', name, Object.assign({page: location.pathname}, params)); } catch(e){}
       }
     </script>
+
+    <script>
+    (function(){
+      const qs = location.search ? location.search : '';
+      document.querySelectorAll('a[href$="booking.html"], a[href$="demo.html"]').forEach(a=>{
+        // 이미 ?가 있으면 &로 연결
+        const join = a.href.includes('?') ? '&' : '?';
+        a.href = a.href + (qs ? (join + qs.slice(1)) : '');
+      });
+    })();
+    </script>
     
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
