@@ -8,6 +8,10 @@ site:
 
 analytics:
   ga4_id: "G-XXXXXXXX"   # 실제 ID로 교체
+  ga4_measurement_protocol:
+    api_secret: "API_SECRET_ABC"   # GA4 측정 프로토콜 API 시크릿
+    client_events:
+      - lead: { form_name: "3min_booking", channel: "google_form" }
   events:
     - cta_booking   # 히어로/푸터 등에서 예약 폼 이동
     - cta_demo      # 데모 캘린더 이동
