@@ -26,16 +26,13 @@
     <!-- GA4 Enhanced Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
     <script>
-      // GA4 스니펫이 이미 있다면 생략
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXX'); // 당신의 GA4 ID
+      gtag('config','G-XXXXXXX'); // GA4 ID로 교체
 
-      // 공통 클릭 트래킹
       function trackClick(name, params={}) {
-        if (!window.gtag) return;
-        gtag('event', name, Object.assign({ page: location.pathname }, params));
+        try { gtag('event', name, Object.assign({page: location.pathname}, params)); } catch(e){}
       }
     </script>
     
