@@ -42,8 +42,8 @@
     <header class="site-header">
         <a href="/index.html" class="brand" aria-label="홈으로 이동">예약봇 <strong>YEYAKBOT</strong></a>
         <nav class="nav">
-            <a href="/booking.html" data-ga="nav_booking" onclick="gtag('event','lead_click',{place:'nav',variant:'brand'});">3분 예약</a>
-            <a href="/demo.html" data-ga="nav_demo" onclick="gtag('event','schedule_click',{place:'nav'});">20분 데모</a>
+            <a href="/booking.html" onclick="trackClick('cta_booking', {position:'nav'});">3분 예약</a>
+            <a href="/demo.html" onclick="trackClick('cta_demo', {position:'nav'});">20분 데모</a>
         </nav>
     </header>
 
@@ -92,9 +92,9 @@
 
     <!-- Sticky Mobile CTA -->
     <div class="sticky-cta">
-        <a class="ghost" href="/booking" onclick="gtag('event','lead_click',{place:'floating',variant:'brand'});">3분 예약</a>
-        <a class="ghost" href="https://pf.kakao.com/_yeyakbot" target="_blank" rel="noopener" onclick="gtag('event','kakao_click',{place:'floating'});">카카오</a>
-        <a class="call" href="tel:01000000000" onclick="gtag('event','call_click',{place:'floating'});">전화</a>
+        <a class="ghost" href="/booking.html" onclick="trackClick('cta_booking', {position:'floating'});">3분 예약</a>
+        <a class="ghost" href="https://pf.kakao.com/_yeyakbot" target="_blank" rel="noopener" onclick="trackClick('kakao_click', {position:'floating'});">카카오</a>
+        <a class="call" href="tel:01000000000" onclick="trackClick('call_click', {position:'floating'});">전화</a>
     </div>
 
     <!-- Calendly → GA4 브리지 -->
