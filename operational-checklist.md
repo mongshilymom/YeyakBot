@@ -23,17 +23,31 @@
 
 ## 4. Cloudflare 리다이렉트/캐시 규칙 ⚠️
 **설정 필요**:
-```
-리다이렉트 규칙:
-- /booking → /booking.html (301)
-- /demo → /demo.html (301)
 
-캐시 규칙:
-- *.html → 5분 TTL
-- /assets/* → 1년 TTL
-```
+### 리다이렉트 규칙 (Redirect Rules)
+1. **Rule 1: Booking 리다이렉트**
+   - Match: `(http.request.uri.path eq "/booking")`
+   - Action: Redirect (301 Permanent)
+   - Target: `https://yeyakbot.com/booking.html`
 
-**액션**: Cloudflare 대시보드에서 규칙 적용 후 Purge Everything 실행
+2. **Rule 2: Demo 리다이렉트**
+   - Match: `(http.request.uri.path eq "/demo")`
+   - Action: Redirect (301 Permanent)
+   - Target: `https://yeyakbot.com/demo.html`
+
+### 캐시 규칙 (Cache Rules)
+1. **Rule 1: HTML 페이지**
+   - Match: `(http.request.uri.path matches ".*\.html$")`
+   - Cache TTL: 5분 (300초)
+
+2. **Rule 2: 정적 자산**
+   - Match: `(http.request.uri.path matches "^/assets/.*")`
+   - Cache TTL: 1년 (31536000초)
+
+**액션**: 
+1. Cloudflare 대시보드 → Rules → Redirect Rules에서 위 2개 규칙 생성
+2. Cloudflare 대시보드 → Caching → Cache Rules에서 위 2개 규칙 생성
+3. 모든 규칙 적용 후 Caching → Configuration → Purge Everything 1회 실행
 
 ## 5. sitemap.xml 응답 체크 ✅
 **상태**: 정상 작동

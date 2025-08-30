@@ -35,19 +35,21 @@ forms:
 
 cdn_cloudflare:
   redirects:
-    - name: "booking_to_html"
-      expr: '(http.host eq "yeyakbot.com" and (http.request.uri.path eq "/booking" or http.request.uri.path eq "/booking/"))'
+    - name: "booking_redirect"
+      expr: '(http.request.uri.path eq "/booking")'
       target: "https://yeyakbot.com/booking.html"
       code: 301
-    - name: "demo_to_html"
-      expr: '(http.host eq "yeyakbot.com" and (http.request.uri.path eq "/demo" or http.request.uri.path eq "/demo/"))'
+    - name: "demo_redirect"
+      expr: '(http.request.uri.path eq "/demo")'
       target: "https://yeyakbot.com/demo.html"
       code: 301
   cache_rules:
-    - path: "/assets/*"     # 정적 자산(이미지/폰트/JS/CSS)
-      ttl: "1y"
-    - path: "*.html"        # 문서
+    - name: "html_pages"
+      expr: '(http.request.uri.path matches ".*\.html$")'
       ttl: "5m"
+    - name: "static_assets"
+      expr: '(http.request.uri.path matches "^/assets/.*")'
+      ttl: "1y"
   security:
     https_only: true
     hsts: "max-age=604800; includeSubDomains; preload" # 7일
