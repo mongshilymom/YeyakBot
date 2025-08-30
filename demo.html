@@ -75,7 +75,7 @@
                 data-url="https://calendly.com/yeyakbot/30min?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=1c64f2"
                 style="min-width:320px;height:860px;border:1px solid #eef2f7;border-radius:10px;overflow:hidden;">
             </div>
-            <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <script src="https://assets.calendly.com/assets/external/widget.js" async onload="fireScheduleViewOnce()"></script>
 
             <script>
             // Calendly 콜백 수신 → GA4 이벤트로 전송
@@ -98,11 +98,21 @@
             </script>
 
             <script>
-            // 위젯 보이면 1회
+            // 데모 위젯 로드 시 1회
+            function fireScheduleViewOnce(){
+              if(window.__sv_done) return; window.__sv_done = true;
+              gtag('event','schedule_view',{page_location:location.href});
+            }
+            
+            // 기존 DOM 감시 방식도 유지 (백업)
             (function(){
               let fired = false;
               const onView = () => {
-                if (!fired) { gtag('event', 'demo_widget_view'); fired = true; }
+                if (!fired) { 
+                  gtag('event', 'demo_widget_view'); 
+                  fireScheduleViewOnce(); // 통합 호출
+                  fired = true; 
+                }
               };
               // Calendly 위젯 DOM 감시
               const w = document.querySelector('.calendly-inline-widget');
