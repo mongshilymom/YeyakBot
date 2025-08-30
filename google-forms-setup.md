@@ -29,7 +29,21 @@ const CONFIG = {
    - 이벤트 소스: "Google Forms에서"
    - 이벤트 유형: "양식 제출 시"
 
-## 2. 필드 매핑 확인
+## 2. 개인정보처리방침 링크 수정 ⚠️
+
+**중요 수정 사항**: 
+구글폼 편집 → "(필수) 개인정보 수집·이용 동의" 설명 부분의 링크를 다음과 같이 수정:
+
+- **잘못된 링크**: `https://yeyakbot.com/privacy`
+- **올바른 링크**: `https://yeyakbot.com/privacy.html`
+
+**수정 방법**:
+1. Google Forms 편집 모드 진입
+2. "(필수) 개인정보 수집·이용 동의" 질문 클릭
+3. 질문 설명(description) 부분에서 링크 수정
+4. `https://yeyakbot.com/privacy.html`로 교체
+
+## 3. 필드 매핑 확인
 
 스크립트의 필드명을 실제 Google Forms 질문과 매칭:
 

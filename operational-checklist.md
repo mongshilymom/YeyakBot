@@ -2,10 +2,16 @@
 
 ## 1. 구글폼 정책 링크 오타 수정 ⚠️
 **문제**: Google Forms 내 개인정보처리방침 링크 오타
-- 현재: `https://yeyakbot.com/privacy)`
-- 수정: `https://yeyakbot.com/privacy.html`
+- 현재: `https://yeyakbot.com/privacy` (확장자 누락)
+- 수정: `https://yeyakbot.com/privacy.html` (올바른 링크)
 
-**액션**: Google Forms → 설정 → 응답 → 개인정보처리방침 링크에서 URL 수정
+**수정 방법**:
+1. Google Forms 편집 모드 진입
+2. "(필수) 개인정보 수집·이용 동의" 질문 클릭
+3. 질문 설명(description) 부분에서 링크 수정
+4. `https://yeyakbot.com/privacy.html`로 교체
+
+**액션**: 구글폼에서 수동으로 링크 URL 교체 필요
 
 ## 2. 헤더/버튼 UTM 보존 ✅
 **상태**: 완료됨
