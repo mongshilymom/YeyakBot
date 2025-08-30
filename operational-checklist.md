@@ -1,11 +1,11 @@
 # YEYAKBOT 운영 체크리스트 (2025-08-30)
 
-## 1. 구글폼 정책 링크 오타 수정 ❌
+## 1. 구글폼 정책 링크 오타 수정 ⚠️
 **문제**: Google Forms 내 개인정보처리방침 링크 오타
 - 현재: `https://yeyakbot.com/privacy)`
 - 수정: `https://yeyakbot.com/privacy.html`
 
-**액션**: Google Forms 설정에서 링크 URL 수정 필요
+**액션**: Google Forms → 설정 → 응답 → 개인정보처리방침 링크에서 URL 수정
 
 ## 2. 헤더/버튼 UTM 보존 ✅
 **상태**: 완료됨

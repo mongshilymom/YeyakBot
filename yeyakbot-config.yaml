@@ -31,6 +31,7 @@ forms:
   email_notifications:
     owner_email: "yeyakbot@gmail.com"
     form_fields: ["이름", "연락처"]
+  privacy_policy_url: "https://yeyakbot.com/privacy.html" # 정확한 링크
 
 cdn_cloudflare:
   redirects:
