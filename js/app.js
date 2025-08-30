@@ -448,6 +448,11 @@
 
 })();
 
+// UTM 파라미터 보존 - 개선된 방식
+function keepUTM(path) {
+    const qs = location.search || "";
+    location.href = path + qs;
+}
 
 // Handle native form submission
 async function handleFormSubmit(event) {
