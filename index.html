@@ -1,117 +1,137 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>예약봇 YEYAKBOT - 놓친 전화를 예약으로, 광고비 0원 첫 달 성과형</title>
-
-  <!-- Canonical / Favicon -->
-  <link rel="canonical" href="https://yeyakbot.com/" />
-  <link rel="icon" href="assets/favicon.png" type="image/png" />
-
-  <!-- Meta -->
-  <meta name="description" content="놓친 전화를 예약으로. 3분 설치·자동응답·보증금 결제·배차 연동까지. 첫 달 성과형 운영." />
-
-  <!-- Site Verification (값 교체 필요) -->
-  <meta name="naver-site-verification" content="YOUR_NAVER_TOKEN" />
-  <meta name="google-site-verification" content="REPLACE_GOOGLE_TOKEN" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="예약봇 YEYAKBOT — 놓친 전화를 예약으로" />
-  <meta property="og:description" content="3분 설치 · 24/7 자동응답 · 즉시 응답 · 보증금 결제. 첫 달 성과형 운영." />
-  <meta property="og:url" content="https://yeyakbot.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://yeyakbot.com/assets/og-cover.jpg" />
-  <meta property="og:site_name" content="예약봇 YEYAKBOT" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="예약봇 YEYAKBOT — 놓친 전화를 예약으로" />
-  <meta name="twitter:description" content="3분 설치 · 24/7 자동응답 · 즉시 응답 · 보증금 결제. 첫 달 성과형 운영." />
-  <meta name="twitter:image" content="https://yeyakbot.com/assets/og-cover.jpg" />
-
-  <!-- GA4 (ID 교체) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX', { send_page_view: true });
-
-    // 이벤트 헬퍼
-    function trackClick(name, params={}) {
-      try { gtag('event', name, Object.assign({ page: location.pathname }, params)); } catch (e) {}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약봇 YEYAKBOT - 놓친 전화를 예약으로, 광고비 0원 첫 달 성과형</title>
+    <link rel="canonical" href="https://yeyakbot.com/">
+    <meta name="description" content="놓친 전화를 예약으로. 3분 설치·자동응답·보증금 결제·배차 연동까지. 첫 달 성과형 운영.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    
+    <!-- Site Verification -->
+    <meta name="naver-site-verification" content="YOUR_NAVER_TOKEN">
+    <meta name="google-site-verification" content="REPLACE_GOOGLE_TOKEN">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="예약봇 YEYAKBOT — 놓친 전화를 예약으로">
+    <meta property="og:description" content="3분 설치 · 24/7 자동응답 · 즉시 응답 · 보증금 결제. 첫 달 성과형 운영.">
+    <meta property="og:url" content="https://yeyakbot.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yeyakbot.com/assets/og-cover.jpg">
+    <meta property="og:site_name" content="예약봇 YEYAKBOT">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="예약봇 YEYAKBOT — 놓친 전화를 예약으로">
+    <meta name="twitter:description" content="3분 설치 · 24/7 자동응답 · 즉시 응답 · 보증금 결제. 첫 달 성과형 운영.">
+    <meta name="twitter:image" content="https://yeyakbot.com/assets/og-cover.jpg">
+    
+    <!-- GA4 Enhanced Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config','G-XXXXXXX', {
+            'send_page_view': true
+        }); // GA4 ID로 교체
+        
+        function trackClick(name, params={}){
+            try {
+                gtag('event', name, Object.assign({page: location.pathname}, params));
+            } catch(e){}
+        }
+    </script>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"Organization",
+        "name":"YEYAKBOT",
+        "url":"https://yeyakbot.com/",
+        "logo":"https://yeyakbot.com/assets/logo.png"
     }
-  </script>
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"Product",
+        "name":"예약봇",
+        "description":"전화/카카오 자동응답으로 예약을 확정하고 보증금 결제까지 자동화하는 서비스",
+        "brand":{"@type":"Brand","name":"YEYAKBOT"},
+        "offers":[
+            {"@type":"Offer","price":"490000","priceCurrency":"KRW","name":"세팅비"},
+            {"@type":"Offer","price":"290000","priceCurrency":"KRW","name":"월 구독료"}
+        ],
+        "url":"https://yeyakbot.com/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context":"https://schema.org","@type":"FAQPage",
+        "mainEntity":[
+            {"@type":"Question","name":"설치는 얼마나 걸리나요?","acceptedAnswer":{"@type":"Answer","text":"기본 설정은 평균 3분 내 완료됩니다. 세부 옵션은 이후 맞춤 적용합니다."}},
+            {"@type":"Question","name":"성과 없으면 정말 0원인가요?","acceptedAnswer":{"@type":"Answer","text":"네. 첫 달은 성과형 요금제 운영이 가능합니다."}},
+            {"@type":"Question","name":"카카오/전화 연동되나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 기존 번호/카카오 채널과 함께 동작하도록 설정합니다."}}
+        ]
+    }
+    </script>
+    
+    <script>
+    (function(){
+        const qs = location.search ? location.search : '';
+        document.querySelectorAll('a[href$="booking.html"], a[href$="demo.html"]').forEach(a=>{
+            // 이미 ?가 있으면 &로 연결
+            const join = a.href.includes('?') ? '&' : '?';
+            a.href = a.href + (qs ? (join + qs.slice(1)) : '');
+        });
+    })();
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"YEYAKBOT",
-    "url":"https://yeyakbot.com/",
-    "logo":"https://yeyakbot.com/assets/logo.png"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Product",
-    "name":"예약봇",
-    "description":"전화/카카오 자동응답으로 예약을 확정하고 보증금 결제까지 자동화하는 서비스",
-    "brand":{"@type":"Brand","name":"YEYAKBOT"},
-    "offers":[
-      {"@type":"Offer","price":"490000","priceCurrency":"KRW","name":"세팅비"},
-      {"@type":"Offer","price":"290000","priceCurrency":"KRW","name":"월 구독료"}
-    ],
-    "url":"https://yeyakbot.com/"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org","@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"설치는 얼마나 걸리나요?","acceptedAnswer":{"@type":"Answer","text":"기본 설정은 평균 3분 내 완료됩니다. 세부 옵션은 이후 맞춤 적용합니다."}},
-      {"@type":"Question","name":"성과 없으면 정말 0원인가요?","acceptedAnswer":{"@type":"Answer","text":"네. 첫 달은 성과형 요금제 운영이 가능합니다."}},
-      {"@type":"Question","name":"카카오/전화 연동되나요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 기존 번호/카카오 채널과 함께 동작하도록 설정합니다."}}
-    ]
-  }
-  </script>
+<header class="site-header">
+    <a href="/" class="brand" aria-label="예약봇 YEYAKBOT">예약봇 YEYAKBOT</a>
+    <nav class="nav">
+        <a href="javascript:keepUTM('/booking.html')" onclick="trackClick('cta_booking',{pos:'nav'});">3분 예약</a>
+        <a href="javascript:keepUTM('/demo.html')" onclick="trackClick('cta_demo',{pos:'nav'});">20분 데모</a>
+        <a href="https://leadengine-production.up.railway.app/" 
+           class="nav-link" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           onclick="trackClick('dashboard_leadengine',{pos:'nav'});">Dashboard</a>
+    </nav>
+</header>
 
-  <!-- ====== Global CSS (필요 스타일만 내장) ====== -->
-  <style>
-    :root{--border:#e5e7eb;--muted:#64748b;--ink:#111;--primary:#2563eb}
-    *{box-sizing:border-box}
-    body{margin:0;color:#0f172a;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Pretendard,Apple SD Gothic Neo,Helvetica,Arial,sans-serif;background:#fff}
-    a{color:inherit}
+<style>
+.site-header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid #f2f4f7;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.brand{font-weight:800;text-decoration:none;color:#111;position:relative;z-index:50;cursor:pointer}
+.brand:hover{opacity:.85}
+.nav a{margin-left:12px;text-decoration:none;color:#111}
+.nav a:hover{color:#2563eb;transition:color 0.3s}
+</style>
 
-    /* Header */
-    .site-header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid #f2f4f7;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-    .brand{font-weight:800;text-decoration:none;color:var(--ink);cursor:pointer}
-    .brand:hover{opacity:.85}
-    .nav{display:flex;align-items:center}
-    .nav a{margin-left:12px;text-decoration:none;color:var(--ink)}
-    /* 요청한 네비 스타일 */
-    .site-header .nav-link{padding:8px 10px;border-radius:6px;transition:background-color .15s ease}
-    .site-header .nav-link:hover{background:#f1f5f9}
-
-    /* Layout helpers */
+<main>
+    <!-- ================== YEYAKBOT: Hero + Deposit + FAQ (drop-in) ================== -->
+    <style>
+    /* ---- Base / utilities (namespaced to avoid conflicts) ---- */
     .yeyak-wrap{max-width:1100px;margin:0 auto;padding:clamp(16px,3vw,28px)}
     .yeyak-row{display:grid;gap:18px}
     .yeyak-2{grid-template-columns:1fr}
-    @media (min-width:900px){.yeyak-2{grid-template-columns:1.1fr .9fr}}
-    .yeyak-card{background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 12px 28px rgba(2,6,23,.06)}
+    @media (min-width: 900px){
+        .yeyak-2{grid-template-columns:1.1fr .9fr}
+    }
+    .yeyak-card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;box-shadow:0 12px 28px rgba(2,6,23,.06)}
     .yeyak-pad{padding:clamp(18px,3vw,28px)}
-    .yeyak-muted{color:var(--muted)}
+    .yeyak-muted{color:#64748b}
     .yeyak-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .yeyak-badge{font-size:12px;padding:6px 10px;border:1px solid var(--border);border-radius:999px;background:#fff}
-    .btn{display:inline-block;padding:10px 16px;border:1px solid #d1d5db;border-radius:8px;text-decoration:none;color:#111}
-    .btn-primary{background:#1c64f2;color:#fff;border-color:#1c64f2}
-    .btn:hover{opacity:.9}
-
-    /* Hero */
-    .yeyak-hero{background:linear-gradient(180deg,#f8fafc 0%, #ffffff 60%)}
+    .yeyak-badge{font-size:12px;padding:6px 10px;border:1px solid #e5e7eb;border-radius:999px;background:#fff}
+    .yeyak-btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 16px;border-radius:10px;border:1px solid #e5e7eb;background:#fff;color:#0f172a;text-decoration:none}
+    .yeyak-btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
+    .yeyak-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
     .yeyak-h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0 0 10px}
     .yeyak-lead{margin:0 0 10px;color:#475569;font-size:clamp(15px,2vw,18px)}
     .yeyak-sec-title{font-size:clamp(20px,2.6vw,28px);margin:0 0 6px}
@@ -120,163 +140,281 @@
     .yeyak-li b{white-space:nowrap}
     .yeyak-kicker{font-size:12px;color:#6b7280;margin-top:8px}
     .yeyak-note{font-size:13px;color:#6b7280}
-
     /* FAQ */
-    .faq-section{max-width:960px;margin:40px auto;padding:0 16px}
-    .faq-section details{border:1px solid #eee;border-radius:10px;padding:12px 14px;margin:10px 0;background:#fff}
-    .faq-section summary{cursor:pointer;font-weight:600}
-    .faq-section summary::-webkit-details-marker{display:none}
-
-    /* Footer */
-    footer{background:#111;color:#cbd5e1;border-top:1px solid #2a2a2a;padding:20px 16px}
-    .footer-content{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
-    .footer-links{max-width:1080px;margin:6px auto 0;display:flex;gap:10px;flex-wrap:wrap;opacity:.9;font-size:.9rem;justify-content:center}
-    footer a{color:#60a5fa;text-decoration:none}
-    footer a:hover{text-decoration:underline}
-
-    /* Sticky Mobile CTA */
-    .sticky-cta{position:fixed;left:0;right:0;bottom:14px;display:flex;gap:10px;justify-content:center;z-index:50}
-    .sticky-cta a{background:#fff;border:1px solid #d1d5db;border-radius:999px;padding:10px 14px;text-decoration:none;color:#111}
-    .sticky-cta a.ghost{background:#fff}
-    .sticky-cta a.call{background:#16a34a;border-color:#16a34a;color:#fff}
-  </style>
-
-  <!-- UTM 유지용 함수 -->
-  <script>
-    function keepUTM(path) {
-      const qs = location.search.replace(/^\?/, '');
-      const join = path.includes('?') ? '&' : '?';
-      location.href = path + (qs ? (join + qs) : '');
-    }
-  </script>
-</head>
-
-<body>
-  <!-- Header -->
-  <header class="site-header">
-    <a href="/" class="brand" aria-label="예약봇 YEYAKBOT" data-home>예약봇 YEYAKBOT</a>
-    <nav class="nav" aria-label="주 메뉴">
-      <a href="javascript:keepUTM('/booking.html')" onclick="trackClick('cta_booking',{pos:'nav'});">3분 예약</a>
-      <a href="javascript:keepUTM('/demo.html')" onclick="trackClick('cta_demo',{pos:'nav'});">20분 데모</a>
-      <!-- 요청: Dashboard 링크 (서브도메인) -->
-      <a href="https://dashboard.yeyakbot.com/" class="nav-link" target="_blank" rel="noopener" onclick="trackClick('dashboard_nav')">Dashboard</a>
-    </nav>
-  </header>
-
-  <main>
-    <!-- ========== HERO ========== -->
+    .yeyak-faq details{border:1px solid #e5e7eb;border-radius:12px;background:#fff}
+    .yeyak-faq details+details{margin-top:10px}
+    .yeyak-faq summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:600}
+    .yeyak-faq summary::-webkit-details-marker{display:none}
+    .yeyak-faq .faq-body{padding:0 18px 16px;color:#475569}
+    /* Hero background */
+    .yeyak-hero{background:linear-gradient(180deg,#f8fafc 0%, #ffffff 60%)}
+    </style>
+    
+    <!-- ========== HERO (무엇/왜/무엇을 하라) ========== -->
     <section class="yeyak-hero">
-      <div class="yeyak-wrap yeyak-row yeyak-2">
-        <div class="yeyak-pad">
-          <h1 class="yeyak-h1">놓친 문의를 '예약'으로</h1>
-          <p class="yeyak-lead">전화·카톡·웹 폼을 한곳에서 받고, <b>즉시 응답 → 보증금 결제 → 배차 확정</b>까지 자동화합니다.<br />야간·주말에도 고객이 떠나기 전에 예약이 완료됩니다.</p>
-          <p style="margin:16px 0">
-            <a href="javascript:keepUTM('/booking.html')" class="btn btn-primary" onclick="trackClick('cta_booking',{pos:'hero'})">지금 바로 시작</a>
-            <a href="javascript:keepUTM('/demo.html')" class="btn" onclick="trackClick('cta_demo',{pos:'hero'})">20분 데모</a>
-          </p>
-          <div class="yeyak-badges">
-            <span class="yeyak-badge">토스 안전결제</span>
-            <span class="yeyak-badge">개인정보 암호화</span>
-            <span class="yeyak-badge">설치 지원</span>
-          </div>
-          <div class="yeyak-kicker">※ 도입 1시간 내 시연 가능</div>
+        <div class="yeyak-wrap yeyak-row yeyak-2">
+            <div class="yeyak-pad">
+                <h1 class="yeyak-h1">놓친 문의를 '예약'으로</h1>
+                <p class="yeyak-lead">전화·카톡·웹 폼을 한곳에서 받고, <b>즉시 응답 → 보증금 결제 → 배차 확정</b>까지 자동화합니다.<br>야간·주말에도 고객이 떠나기 전에 예약이 완료됩니다.</p>
+                
+                <!-- 히어로 CTA -->
+                <p style="margin:16px 0;">
+                    <a href="javascript:keepUTM('/booking.html')" class="btn btn-primary" onclick="trackClick('cta_booking',{pos:'hero'})">지금 바로 시작</a>
+                    <a href="javascript:keepUTM('/demo.html')" class="btn" onclick="trackClick('cta_demo',{pos:'hero'})">20분 데모</a>
+                </p>
+                
+                <style>
+                .btn{display:inline-block;padding:10px 16px;border:1px solid #d1d5db;border-radius:8px;text-decoration:none;color:#111}
+                .btn-primary{background:#1c64f2;color:#fff;border-color:#1c64f2}
+                .btn:hover{opacity:.9}
+                </style>
+                
+                <div class="yeyak-badges">
+                    <span class="yeyak-badge">토스 안전결제</span>
+                    <span class="yeyak-badge">개인정보 암호화</span>
+                    <span class="yeyak-badge">설치 지원</span>
+                </div>
+                <div class="yeyak-kicker">※ 도입 1시간 내 시연 가능</div>
+            </div>
+            
+            <div class="yeyak-pad">
+                <div class="yeyak-card yeyak-pad">
+                    <h3 class="yeyak-sec-title">한 눈에 보는 작동 방식</h3>
+                    <ol class="yeyak-list" style="counter-reset: step">
+                        <li class="yeyak-li"><b>① 문의 접수</b><span>전화/카톡/웹폼으로 들어온 문의를 통합 수신</span></li>
+                        <li class="yeyak-li"><b>② 즉시 응답</b><span>부족 정보만 확인하고 선택 슬롯 제시</span></li>
+                        <li class="yeyak-li"><b>③ 보증금 결제</b><span>안전결제 링크 전송, 고객이 결제하면</span></li>
+                        <li class="yeyak-li"><b>④ 예약 확정</b><span>일정 잠금·배차 완료, 고객 알림 발송</span></li>
+                    </ol>
+                    <p class="yeyak-note" style="margin-top:10px">전 과정은 인앱 알림으로 실시간 확인됩니다.</p>
+                </div>
+            </div>
         </div>
-
-        <div class="yeyak-pad">
-          <div class="yeyak-card yeyak-pad">
-            <h3 class="yeyak-sec-title">한 눈에 보는 작동 방식</h3>
-            <ol class="yeyak-list" style="counter-reset: step">
-              <li class="yeyak-li"><b>① 문의 접수</b><span>전화/카톡/웹폼으로 들어온 문의를 통합 수신</span></li>
-              <li class="yeyak-li"><b>② 즉시 응답</b><span>부족 정보만 확인하고 선택 슬롯 제시</span></li>
-              <li class="yeyak-li"><b>③ 보증금 결제</b><span>안전결제 링크 전송, 고객이 결제하면</span></li>
-              <li class="yeyak-li"><b>④ 예약 확정</b><span>일정 잠금·배차 완료, 고객 알림 발송</span></li>
-            </ol>
-            <p class="yeyak-note" style="margin-top:10px">전 과정은 인앱 알림으로 실시간 확인됩니다.</p>
-          </div>
-        </div>
-      </div>
     </section>
-
-    <!-- ========== DEPOSIT ========== -->
+    
+    <!-- ========== DEPOSIT(보증금) 섹션 ========== -->
     <section id="deposit" class="yeyak-wrap yeyak-row" style="margin-top:8px">
-      <div class="yeyak-card yeyak-pad">
-        <h2 class="yeyak-sec-title">왜 보증금이 필요한가요?</h2>
-        <p class="yeyak-muted" style="margin:0">노쇼를 줄이고 스케줄을 확정하기 위한 최소 예치금입니다. 고객에게는 명확한 약속, 사장님께는 일정 안정성을 제공합니다.</p>
-        <div class="yeyak-row" style="margin-top:14px;grid-template-columns:repeat(3,1fr)">
-          <div class="yeyak-card yeyak-pad" style="border-radius:12px">
-            <b>금액</b>
-            <div class="yeyak-muted">예치 <b>₩50,000</b> (맞춤 가능)</div>
-          </div>
-          <div class="yeyak-card yeyak-pad" style="border-radius:12px">
-            <b>환불</b>
-            <div class="yeyak-muted"><b>D-1 20시</b> 이전 전액 환불, 이후 취소 시 전액 차감 *</div>
-          </div>
-          <div class="yeyak-card yeyak-pad" style="border-radius:12px">
-            <b>안전</b>
-            <div class="yeyak-muted">토스(Toss) 안전결제, 전자영수증 즉시 발급</div>
-          </div>
+        <div class="yeyak-card yeyak-pad">
+            <h2 class="yeyak-sec-title">왜 보증금이 필요한가요?</h2>
+            <p class="yeyak-muted" style="margin:0">노쇼를 줄이고 스케줄을 확정하기 위한 최소 예치금입니다. 고객에게는 명확한 약속, 사장님께는 일정 안정성을 제공합니다.</p>
+            
+            <div class="yeyak-row" style="margin-top:14px;grid-template-columns:repeat(3,1fr)">
+                <div class="yeyak-card yeyak-pad" style="border-radius:12px">
+                    <b>금액</b>
+                    <div class="yeyak-muted">예치 <b>₩50,000</b> (맞춤 가능)</div>
+                </div>
+                <div class="yeyak-card yeyak-pad" style="border-radius:12px">
+                    <b>환불</b>
+                    <div class="yeyak-muted"><b>D-1 20시</b> 이전 전액 환불, 이후 취소 시 전액 차감 *</div>
+                </div>
+                <div class="yeyak-card yeyak-pad" style="border-radius:12px">
+                    <b>안전</b>
+                    <div class="yeyak-muted">토스(Toss) 안전결제, 전자영수증 즉시 발급</div>
+                </div>
+            </div>
+            
+            <p class="yeyak-note" style="margin-top:10px">* 정확한 환불/취소 규정은 <a href="/terms">이용약관</a>을 따릅니다. 개인정보 처리 및 보관은 <a href="/privacy">개인정보처리방침</a>에 명시됩니다.</p>
+            
+            <p style="margin:16px 0;">
+                <a href="javascript:keepUTM('/booking.html')" class="btn btn-primary" onclick="trackClick('cta_booking',{pos:'deposit'})">지금 예약 시작</a>
+                <a href="javascript:keepUTM('/demo.html')" class="btn" onclick="trackClick('cta_demo',{pos:'deposit'})">데모 예약</a>
+            </p>
         </div>
-        <p class="yeyak-note" style="margin-top:10px">* 정확한 환불/취소 규정은 <a href="/terms">이용약관</a>을 따릅니다. 개인정보 처리 및 보관은 <a href="/privacy">개인정보처리방침</a>에 명시됩니다.</p>
-        <p style="margin:16px 0">
-          <a href="javascript:keepUTM('/booking.html')" class="btn btn-primary" onclick="trackClick('cta_booking',{pos:'deposit'})">지금 예약 시작</a>
-          <a href="javascript:keepUTM('/demo.html')" class="btn" onclick="trackClick('cta_demo',{pos:'deposit'})">데모 예약</a>
-        </p>
-      </div>
     </section>
-
-    <!-- ========== FAQ ========== -->
-    <section id="faq" class="faq-section">
-      <h2 style="font-size:24px;font-weight:800;margin-bottom:16px">자주 묻는 질문</h2>
-      <details onclick="gtag&&gtag('event','faq_open',{question:'설치는 얼마나 걸리나요?'});">
-        <summary>설치는 얼마나 걸리나요?</summary>
-        <div>기본 설정은 평균 3분 내 완료됩니다. 세부 옵션은 이후에 천천히 맞춰 드립니다.</div>
-      </details>
-      <details onclick="gtag&&gtag('event','faq_open',{question:'성과 없으면 정말 0원인가요?'});">
-        <summary>성과 없으면 정말 0원인가요?</summary>
-        <div>네. 첫 달은 성과형 요금제(보증금/예약 성사 기준)로 운영 가능합니다.</div>
-      </details>
-      <details onclick="gtag&&gtag('event','faq_open',{question:'카카오/전화 연동되나요?'});">
-        <summary>카카오/전화 연동되나요?</summary>
-        <div>가능합니다. 카카오 채널·기존 번호와 함께 동작하도록 설정합니다.</div>
-      </details>
+    
+    <!-- ========== FAQ 섹션 (최적화 버전) ========== -->
+    <section id="faq" class="faq-section" style="max-width:960px;margin:40px auto;padding:0 16px">
+        <h2 style="font-size:24px;font-weight:800;margin-bottom:16px">자주 묻는 질문</h2>
+        <details onclick="gtag&&gtag('event','faq_open',{question:'설치는 얼마나 걸리나요?'});">
+            <summary>설치는 얼마나 걸리나요?</summary>
+            <div>기본 설정은 평균 3분 내 완료됩니다. 세부 옵션은 이후에 천천히 맞춰 드립니다.</div>
+        </details>
+        <details onclick="gtag&&gtag('event','faq_open',{question:'성과 없으면 정말 0원인가요?'});">
+            <summary>성과 없으면 정말 0원인가요?</summary>
+            <div>네. 첫 달은 성과형 요금제(보증금/예약 성사 기준)로 운영 가능합니다.</div>
+        </details>
+        <details onclick="gtag&&gtag('event','faq_open',{question:'카카오/전화 연동되나요?'});">
+            <summary>카카오/전화 연동되나요?</summary>
+            <div>가능합니다. 카카오 채널·기존 번호와 함께 동작하도록 설정합니다.</div>
+        </details>
+        <style>
+        .faq-section details{border:1px solid #eee;border-radius:10px;padding:12px 14px;margin:10px 0;background:#fff}
+        .faq-section summary{cursor:pointer;font-weight:600}
+        .faq-section summary::-webkit-details-marker{display:none}
+        </style>
     </section>
+    
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📞</div>
+                    <h3>24/7 자동응답</h3>
+                    <p>밤낮없이 들어오는 전화를 놓치지 않고 자동으로 예약까지 연결합니다.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>3분 간편설치</h3>
+                    <p>복잡한 설정 없이 3분만에 설치 완료. 바로 다음 전화부터 예약 전환이 시작됩니다.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>성과형 요금제</h3>
+                    <p>전환이 없으면 그달 구독료는 0원. 성과가 확실할 때만 비용을 지불하세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results Section -->
+    <section class="results">
+        <div class="container">
+            <h2>실제 고객 성과</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>14일 결과</h3>
+                    <p class="result-description">강서구 이사업체: 놓친 문의 37건 중 9건 예약 전환.</p>
+                </div>
+                <div class="result-card">
+                    <h3>성수기 대응</h3>
+                    <p class="result-description">에어컨 청소: 야간 접수 18건 자동 응대, 노쇼 0건.</p>
+                </div>
+                <div class="result-card">
+                    <h3>보증 & 품질 기준</h3>
+                    <p class="result-description">전환 0건이면 구독료 0원. 지역/예산/의사결정자/72시간 내 통화 가능 기준 충족 리드만 과금.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-card">
+                <h2>투명한 요금제</h2>
+                <div class="price-items">
+                    <div class="price-item">
+                        <span class="price-label">세팅비</span>
+                        <span class="price-value">49만원 <small>(1회)</small></span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-label">월 구독료</span>
+                        <span class="price-value">29만원</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="price-label">미팅 확정</span>
+                        <span class="price-value">10만원/건</span>
+                    </div>
+                </div>
+                <p class="price-guarantee">전환 없으면 그달 구독료 0원 보장</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>예약봇이 제공하는 모든 것</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>🚀 즉시 설치</h3>
+                    <p>기존 전화번호 그대로 사용하며, 3분만에 설치가 완료됩니다. 별도 하드웨어나 앱 설치가 필요 없습니다.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🛡️ 성과 보장</h3>
+                    <p>첫 달 전환이 없으면 구독료를 받지 않습니다. 확실한 성과가 나올 때만 비용을 지불하세요.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>💬 카카오 연동</h3>
+                    <p>예약 확정부터 리마인더까지 카카오톡으로 자동 발송됩니다. 고객과의 소통이 더욱 편리해집니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>지금 바로 시작하세요</h2>
+                <p>놓친 전화를 예약으로 바꾸는 첫 번째 단계를 시작해보세요.</p>
+                <div class="cta-buttons">
+                    <a href="javascript:keepUTM('/booking.html')" class="btn btn-primary btn-large" onclick="trackClick('cta_booking',{pos:'footer'})" aria-label="3분만에 예약 설정 완료하기">3분 예약</a>
+                    <a href="javascript:keepUTM('/demo.html')" class="btn btn-secondary btn-large" onclick="trackClick('cta_demo',{pos:'footer'})" aria-label="20분 데모로 자세한 기능 확인하기">20분 데모</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
-    <!-- == 기타 섹션들은 기존 코드 유지 == -->
-    <!-- Benefits / Results / Pricing / Features / CTA 등 (생략 없이 유지됨) -->
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
+<footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <p>© 2025 예약봇 · YEYAKBOT</p>
-        <span aria-hidden="true">|</span>
-        <p>by <a href="https://letyou.kr" target="_blank" rel="noopener">LetYou</a></p>
-      </div>
-      <div class="footer-links">
-        <a href="privacy.html">개인정보처리방침</a>
-        <a href="terms.html">이용약관</a>
-        <a href="robots.txt">robots.txt</a>
-        <a href="sitemap.xml">sitemap.xml</a>
-      </div>
+        <div class="footer-content">
+            <p>&copy; 2025 예약봇 · YEYAKBOT</p>
+            <p class="powered-by">
+                Powered by <strong style="color:#2563eb;">LetYou</strong>
+            </p>
+            <div class="footer-links">
+                <a href="privacy.html">개인정보처리방침</a>
+                <a href="terms.html">이용약관</a>
+                <a href="robots.txt">robots.txt</a>
+                <a href="sitemap.xml">sitemap.xml</a>
+            </div>
+        </div>
     </div>
-  </footer>
+</footer>
 
-  <!-- Sticky Mobile CTA -->
-  <div class="sticky-cta" aria-label="빠른 실행 버튼">
+<style>
+.footer {
+    background-color: #f8fafc;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid #e5e7eb;
+}
+.footer-content {
+    text-align: center;
+}
+.powered-by {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+.footer-links {
+    margin-top: 1rem;
+}
+.footer-links a {
+    margin: 0 1rem;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.footer-links a:hover {
+    color: #2563eb;
+}
+</style>
+
+<!-- Sticky Mobile CTA -->
+<div class="sticky-cta">
     <a class="ghost" href="javascript:keepUTM('/booking.html')" onclick="trackClick('cta_booking',{pos:'floating'});">3분 예약</a>
     <a class="ghost" href="https://pf.kakao.com/_yeyakbot" target="_blank" rel="noopener" onclick="trackClick('kakao_click',{pos:'floating'});">카카오</a>
     <a class="call" href="tel:01000000000" onclick="trackClick('call_click',{pos:'floating'});">전화</a>
-  </div>
+</div>
 
-  <!-- JS (필요 시 앱 스크립트) -->
-  <script>
-    // 로고/브랜드 클릭 시 홈 이동
-    document.querySelectorAll('[data-home], .brand').forEach(el=>{
-      el.style.cursor='pointer';
-      el.addEventListener('click',()=>location.href='/');
-    });
-  </script>
-  <script src="js/app.js"></script>
+<script>
+// Brand element click handler
+document.querySelectorAll('[data-home], .brand').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', () => location.href = '/index.html');
+});
+
+// Dashboard tracking for LeadEngine
+function trackDashboardClick() {
+    console.log('User navigated to LeadEngine Dashboard');
+    // 추가 추적 로직 여기에 구현 가능
+}
+</script>
+
+<script src="js/app.js"></script>
+
 </body>
 </html>
