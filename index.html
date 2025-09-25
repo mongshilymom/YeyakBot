@@ -93,26 +93,76 @@
 </head>
 <body>
 
+<!-- ===== Header: YEYAKBOT ===== -->
 <header class="site-header">
-    <a href="/" class="brand" aria-label="예약봇 YEYAKBOT">예약봇 YEYAKBOT</a>
-    <nav class="nav">
-        <a href="javascript:keepUTM('/booking.html')" onclick="trackClick('cta_booking',{pos:'nav'});">3분 예약</a>
-        <a href="javascript:keepUTM('/demo.html')" onclick="trackClick('cta_demo',{pos:'nav'});">20분 데모</a>
-        <a href="https://leadengine-production.up.railway.app/" 
-           class="nav-link" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           onclick="trackClick('dashboard_leadengine',{pos:'nav'});">Dashboard</a>
-    </nav>
+  <a href="/" class="brand" aria-label="예약봇 YEYAKBOT">예약봇 YEYAKBOT</a>
+
+  <nav class="nav" aria-label="주요 메뉴">
+    <a href="javascript:keepUTM('/booking.html')"
+       class="nav-link"
+       onclick="trackClick('cta_booking',{pos:'nav'});">3분 예약</a>
+
+    <a href="javascript:keepUTM('/demo.html')"
+       class="nav-link"
+       onclick="trackClick('cta_demo',{pos:'nav'});">20분 데모</a>
+
+    <a href="https://leadengine-production.up.railway.app/"
+       class="nav-link nav-external"
+       target="_blank"
+       rel="noopener noreferrer"
+       onclick="trackClick('dashboard_leadengine',{pos:'nav'});">Dashboard</a>
+  </nav>
 </header>
 
 <style>
-.site-header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid #f2f4f7;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-.brand{font-weight:800;text-decoration:none;color:#111;position:relative;z-index:50;cursor:pointer}
-.brand:hover{opacity:.85}
-.nav a{margin-left:12px;text-decoration:none;color:#111}
-.nav a:hover{color:#2563eb;transition:color 0.3s}
+  :root{
+    --fg:#0f172a;            /* 기본 글자색 (slate-900 느낌) */
+    --muted:#475569;         /* 서브 글자색 */
+    --primary:#2563eb;       /* 포인트(파란색) */
+    --ring: 40, 120, 255;    /* focus ring RGB */
+  }
+  .site-header{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:1rem; padding:.875rem 1rem;
+    background:#fff; color:var(--fg); border-bottom:1px solid #e5e7eb;
+  }
+  .brand{
+    font-weight:800; letter-spacing:.2px; font-size:1.125rem; /* 18px */
+    color:var(--fg); text-decoration:none;
+    border-radius:.375rem;
+    transition:color .2s ease, opacity .2s ease, transform .2s ease;
+  }
+  .brand:hover{ color:var(--primary); opacity:.95; transform:translateX(1px); }
+  .brand:focus-visible{
+    outline:none; box-shadow:0 0 0 .18rem rgba(var(--ring),.35);
+  }
+
+  .nav{ display:flex; align-items:center; gap:1.25rem; }
+  .nav-link{
+    font-size:.95rem; color:var(--muted); text-decoration:none;
+    border-radius:.25rem;
+    transition:color .15s ease, text-underline-offset .15s ease, opacity .15s ease;
+    text-underline-offset:4px;
+  }
+  .nav-link:hover{ color:var(--fg); text-decoration:underline; }
+  .nav-link:focus-visible{
+    outline:none; box-shadow:0 0 0 .18rem rgba(var(--ring),.25);
+  }
+  .nav-external::after{
+    content:"↗"; margin-left:.35rem; font-size:.85em; opacity:.7; transition:opacity .2s;
+  }
+  .nav-external:hover::after{ opacity:1; }
+
+  /* 모바일 */
+  @media (max-width: 640px){
+    .site-header{ padding:.75rem .875rem; }
+    .nav{ gap:.875rem; }
+    .brand{ font-size:1rem; }
+    .nav-link{ font-size:.9rem; }
+  }
 </style>
+
 
 <main>
     <!-- ================== YEYAKBOT: Hero + Deposit + FAQ (drop-in) ================== -->
